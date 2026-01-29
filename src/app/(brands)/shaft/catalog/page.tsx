@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, MessageCircle } from "lucide-react";
 
 // Mock data for initial development
 const MOCK_PRODUCTS = [
@@ -7,74 +9,123 @@ const MOCK_PRODUCTS = [
         id: "1",
         name: "Shaft 542 GT",
         description: "Full face helmet with aerodynamic design and superior ventilation.",
-        image: "https://placehold.co/400x400?text=Shaft+542",
+        image: "https://placehold.co/600x600/111/444?text=Shaft+542",
         price: "N/A"
     },
     {
         id: "2",
         name: "Shaft Pro 610",
         description: "Modular helmet for touring and city riding.",
-        image: "https://placehold.co/400x400?text=Shaft+Pro",
+        image: "https://placehold.co/600x600/111/444?text=Shaft+Pro",
         price: "N/A"
     },
     {
         id: "3",
         name: "Shaft MX 320",
         description: "Off-road helmet for extreme conditions.",
-        image: "https://placehold.co/400x400?text=Shaft+MX",
+        image: "https://placehold.co/600x600/111/444?text=Shaft+MX",
         price: "N/A"
     },
     {
         id: "4",
         name: "Shaft Jet Custom",
         description: "Classic style with modern protection.",
-        image: "https://placehold.co/400x400?text=Shaft+Jet",
+        image: "https://placehold.co/600x600/111/444?text=Shaft+Jet",
+        price: "N/A"
+    },
+    {
+        id: "5",
+        name: "Shaft Carbon X",
+        description: "Ultra-lightweight carbon fiber construction.",
+        image: "https://placehold.co/600x600/111/444?text=Carbon+X",
+        price: "N/A"
+    },
+    {
+        id: "6",
+        name: "Shaft SH-PRO",
+        description: "Professional racing spec helmet.",
+        image: "https://placehold.co/600x600/111/444?text=SH-PRO",
         price: "N/A"
     },
 ];
 
 export default function ShaftCatalogPage() {
     return (
-        <div className="min-h-screen bg-gray-50">
-            <header className="bg-black text-white py-8 px-8 sticky top-0 z-30 shadow-lg">
+        <div className="min-h-screen bg-black text-white font-sans selection:bg-[#C54D3C] selection:text-white">
+            {/* Header */}
+            <header className="sticky top-0 z-30 bg-black/90 backdrop-blur-md border-b border-zinc-900 py-6 px-8">
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
-                    <Link href="/shaft" className="flex items-center text-gray-400 hover:text-white transition-colors">
-                        <ArrowLeft className="mr-2" /> Back to Home
+                    <Link href="/shaft" className="group flex items-center text-gray-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">
+                        <ArrowLeft className="mr-2 w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back
                     </Link>
-                    <h1 className="text-2xl font-bold uppercase tracking-wider">Shaft Catalog</h1>
-                    <div className="w-24" /> {/* Spacer */}
+
+                    <div className="flex items-center gap-2">
+                        <img src="/images/ShaftLogo.png" alt="Shaft Logo" className="h-8 w-auto brightness-0 invert" />
+                        <span className="hidden md:inline text-xl font-black italic uppercase tracking-tighter">
+                            <span className="text-[#C54D3C]">/</span> Catalog
+                        </span>
+                    </div>
+
+                    <div className="w-20" /> {/* Spacer for visual balance */}
                 </div>
             </header>
 
-            <main className="max-w-7xl mx-auto py-12 px-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <main className="max-w-7xl mx-auto py-16 px-6">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+                    <div>
+                        <h1 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-4">
+                            The <span className="text-[#C54D3C]">Collection</span>
+                        </h1>
+                        <p className="text-gray-400 max-w-xl">
+                            Explore our range of certified helmets designed for safety, comfort, and speed.
+                        </p>
+                    </div>
+                    {/* Filter placeholder */}
+                    <div className="mt-8 md:mt-0 flex gap-4">
+                        <button className="text-sm font-bold uppercase tracking-widest text-[#C54D3C] border-b border-[#C54D3C]">All</button>
+                        <button className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Full Face</button>
+                        <button className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Modular</button>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {MOCK_PRODUCTS.map((product) => (
-                        <div key={product.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
-                            <div className="aspect-square bg-gray-200 relative">
-                                {/* Normally we'd use next/image but stick to img for placehold.co simplicity */}
+                        <div key={product.id} className="group bg-zinc-900 border border-zinc-800 hover:border-[#C54D3C] transition-all duration-300 flex flex-col">
+                            <div className="aspect-square relative overflow-hidden bg-zinc-950">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={product.image}
                                     alt={product.name}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                                 />
+                                {/* Overlay Tag */}
+                                <div className="absolute top-4 right-4 bg-[#C54D3C] text-white text-[10px] font-black uppercase px-2 py-1 tracking-widest">
+                                    New
+                                </div>
                             </div>
-                            <div className="p-6 flex-1 flex flex-col">
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
-                                <p className="text-gray-600 text-sm mb-6 flex-1">{product.description}</p>
+
+                            <div className="p-8 flex-1 flex flex-col items-start">
+                                <h3 className="text-2xl font-black uppercase italic text-white mb-2">{product.name}</h3>
+                                <p className="text-gray-500 text-sm mb-6 leading-relaxed flex-1">{product.description}</p>
+
                                 <a
                                     href={`https://wa.me/18001234567?text=I'm interested in the ${product.name}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block w-full text-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-colors"
+                                    className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-[#C54D3C] hover:text-white font-black uppercase tracking-widest py-4 px-6 transition-all clip-path-slant"
                                 >
-                                    Request via WhatsApp
+                                    <MessageCircle size={18} />
+                                    Inquire Now
                                 </a>
                             </div>
                         </div>
                     ))}
                 </div>
             </main>
+
+            <footer className="py-8 text-center text-zinc-800 text-xs uppercase tracking-widest">
+                Shaft Dominicana Catalog &copy; 2026
+            </footer>
         </div>
     );
 }

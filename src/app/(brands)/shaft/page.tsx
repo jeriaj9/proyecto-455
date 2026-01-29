@@ -4,8 +4,8 @@ import { ArrowRight, Shield, Wind, Zap } from "lucide-react";
 export default function ShaftPage() {
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-[#C54D3C] selection:text-white">
-            {/* Navigation (Transparent) */}
-            <nav className="absolute top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-white/90">
+            {/* Navigation (Fixed) */}
+            <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-white/90 bg-black/60 backdrop-blur-md transition-all">
                 <div className="relative group cursor-pointer w-32 h-12 flex items-center">
                     {/* Logo Image */}
                     <img
