@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Wrench, Disc, Thermometer, Car, Laptop, Filter, Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import ProjectDropdown from "@/components/ProjectDropdown";
 
 export default function AutoServicesPage() {
     return (
@@ -18,9 +19,7 @@ export default function AutoServicesPage() {
                         <Link href="#about" className="hover:text-[#4E759C] transition-colors">About Us</Link>
                         <Link href="#contact" className="hover:text-[#4E759C] transition-colors">Contact</Link>
                     </div>
-                    <button className="bg-[#4E759C] text-white px-6 py-2 rounded-full font-bold uppercase text-xs hover:bg-[#3a5a78] transition-all shadow-lg shadow-[#4E759C]/20">
-                        Book Now
-                    </button>
+                    <ProjectDropdown theme="light" />
                 </div>
             </nav>
 

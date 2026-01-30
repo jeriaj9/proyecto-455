@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Clock, Facebook, Instagram, MapPin, Phone, Shield, Wind, Zap } from "lucide-react";
+import ProjectDropdown from "@/components/ProjectDropdown";
 
 export default function ShaftPage() {
     return (
@@ -21,9 +22,7 @@ export default function ShaftPage() {
                     <Link href="#about" className="hover:text-[#C54D3C] transition-colors">Safety</Link>
                     <Link href="/shaft/catalog" className="hover:text-[#C54D3C] transition-colors">Catalog</Link>
                 </div>
-                <button className="hidden md:block border-2 border-white px-6 py-2 rounded-full font-bold uppercase text-xs hover:bg-white hover:text-black transition-all">
-                    Contact Us
-                </button>
+                <ProjectDropdown theme="dark" />
             </nav>
 
             {/* Hero Section */}

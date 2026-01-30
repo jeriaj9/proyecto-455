@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Clock, Facebook, Instagram, MapPin, Phone, Shield, Wind, Zap } from "lucide-react";
+import ProjectDropdown from "@/components/ProjectDropdown";
 
 export default function NexxPage() {
     return (
@@ -15,9 +16,7 @@ export default function NexxPage() {
                     <Link href="#about" className="hover:text-[#C54D3C] transition-colors">Safety</Link>
                     <Link href="/nexx/catalog" className="hover:text-[#C54D3C] transition-colors">Catalog</Link>
                 </div>
-                <button className="hidden md:block border-2 border-black px-6 py-2 rounded-full font-bold uppercase text-xs hover:bg-black hover:text-white transition-all">
-                    Contact Us
-                </button>
+                <ProjectDropdown theme="light" />
             </nav>
 
             {/* Hero Section */}

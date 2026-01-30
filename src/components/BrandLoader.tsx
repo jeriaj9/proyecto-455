@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-type Brand = "shaft" | "auto-services" | "offroad";
+type Brand = "shaft" | "auto-services" | "nexx";
 
 interface BrandLoaderProps {
     brand: Brand;
@@ -36,7 +36,7 @@ export default function BrandLoader({ brand }: BrandLoaderProps) {
                         <p className="text-xl font-bold text-green-600">Preparing Your Service</p>
                     </div>
                 );
-            case "offroad":
+            case "nexx":
                 return (
                     <div className="flex flex-col items-center justify-center space-y-4">
                         {/* Placeholder for 4x4 animation */}
