@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowLeft, MessageCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Mock data for initial development - Nexx Helmets
 const MOCK_PRODUCTS = [
@@ -50,13 +51,15 @@ const MOCK_PRODUCTS = [
 ];
 
 export default function NexxCatalogPage() {
+    const { t } = useLanguage();
+
     return (
         <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
             {/* Header */}
             <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-200 py-6 px-8">
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     <Link href="/nexx" className="group flex items-center text-gray-500 hover:text-black transition-colors text-sm font-bold uppercase tracking-widest">
-                        <ArrowLeft className="mr-2 w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back
+                        <ArrowLeft className="mr-2 w-4 h-4 group-hover:-translate-x-1 transition-transform" /> {t.common.back}
                     </Link>
 
                     <div className="flex items-center gap-2">
@@ -64,7 +67,7 @@ export default function NexxCatalogPage() {
                             Nexx <span className="text-[#C54D3C]">Helmets</span>
                         </span>
                         <span className="hidden md:inline text-xl font-black italic uppercase tracking-tighter">
-                            <span className="text-[#C54D3C]">/</span> Catalog
+                            <span className="text-[#C54D3C]">/</span> {t.common.catalog}
                         </span>
                     </div>
 
@@ -76,7 +79,7 @@ export default function NexxCatalogPage() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                     <div>
                         <h1 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-4">
-                            The <span className="text-[#C54D3C]">Collection</span>
+                            {t.common.theCollection}
                         </h1>
                         <p className="text-gray-600 max-w-xl">
                             Explore our range of premium European helmets designed for every riding style.
@@ -84,7 +87,7 @@ export default function NexxCatalogPage() {
                     </div>
                     {/* Filter placeholder */}
                     <div className="mt-8 md:mt-0 flex gap-4">
-                        <button className="text-sm font-bold uppercase tracking-widest text-[#C54D3C] border-b border-[#C54D3C]">All</button>
+                        <button className="text-sm font-bold uppercase tracking-widest text-[#C54D3C] border-b border-[#C54D3C]">{t.common.all}</button>
                         <button className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors">Adventure</button>
                         <button className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors">Sport</button>
                     </div>
@@ -102,7 +105,7 @@ export default function NexxCatalogPage() {
                                 />
                                 {/* Overlay Tag */}
                                 <div className="absolute top-4 right-4 bg-[#C54D3C] text-white text-[10px] font-black uppercase px-2 py-1 tracking-widest">
-                                    New
+                                    {t.common.new}
                                 </div>
                             </div>
 
@@ -117,7 +120,7 @@ export default function NexxCatalogPage() {
                                     className="w-full flex items-center justify-center gap-2 bg-black text-white hover:bg-[#C54D3C] hover:text-white font-black uppercase tracking-widest py-4 px-6 transition-all clip-path-slant"
                                 >
                                     <MessageCircle size={18} />
-                                    Inquire Now
+                                    {t.common.inquireNow}
                                 </a>
                             </div>
                         </div>
@@ -126,7 +129,7 @@ export default function NexxCatalogPage() {
             </main>
 
             <footer className="py-8 text-center text-gray-500 text-xs uppercase tracking-widest">
-                Nexx Helmets Catalog &copy; 2026
+                Nexx Helmets {t.common.catalogFooter} &copy; 2026
             </footer>
         </div>
     );
