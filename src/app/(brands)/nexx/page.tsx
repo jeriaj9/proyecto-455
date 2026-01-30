@@ -3,9 +3,9 @@ import { ArrowRight, Shield, Wind, Zap } from "lucide-react";
 
 export default function NexxPage() {
     return (
-        <div className="min-h-screen bg-black text-white font-sans selection:bg-[#C54D3C] selection:text-white">
+        <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
             {/* Navigation (Fixed) */}
-            <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-white/90 bg-black/60 backdrop-blur-md transition-all">
+            <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-black/90 bg-white/90 backdrop-blur-md transition-all">
                 <div className="relative group cursor-pointer w-32 h-12 flex items-center">
                     {/* Logo Image Placeholder */}
                     <img src="https://nexx-helmets.com/wp-content/themes/nexx/images/logotype.svg" alt="Nexx Helmets" className="w-32 h-12 object-contain" />
@@ -15,16 +15,16 @@ export default function NexxPage() {
                     <Link href="#about" className="hover:text-[#C54D3C] transition-colors">Safety</Link>
                     <Link href="/nexx/catalog" className="hover:text-[#C54D3C] transition-colors">Catalog</Link>
                 </div>
-                <button className="hidden md:block border-2 border-white px-6 py-2 rounded-full font-bold uppercase text-xs hover:bg-white hover:text-black transition-all">
+                <button className="hidden md:block border-2 border-black px-6 py-2 rounded-full font-bold uppercase text-xs hover:bg-black hover:text-white transition-all">
                     Contact Us
                 </button>
             </nav>
 
             {/* Hero Section */}
-            <section className="relative h-screen flex items-center justify-start bg-black overflow-hidden">
+            <section className="relative h-screen flex items-center justify-start bg-white overflow-hidden">
                 {/* Abstract Background Elements */}
                 <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-[#C54D3C]/20 to-transparent skew-x-12 transform translate-x-1/4" />
-                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
 
                 {/* Placeholder for Hero Image */}
                 {/* <div className="absolute inset-0 z-0 opacity-60 bg-[url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center" /> */}
@@ -38,21 +38,21 @@ export default function NexxPage() {
                     </div>
                     <h1 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-[0.9]">
                         Ride <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">
                             The Future.
                         </span>
                     </h1>
-                    <p className="text-gray-400 text-lg md:text-xl max-w-md font-medium border-l-4 border-[#C54D3C] pl-4">
+                    <p className="text-gray-600 text-lg md:text-xl max-w-md font-medium border-l-4 border-[#C54D3C] pl-4">
                         European innovation meets motorcycle passion.
                         Technologically advanced helmets for every rider.
                     </p>
                     <div className="pt-8 flex flex-col md:flex-row gap-4">
                         <Link href="/nexx/catalog">
-                            <button className="bg-[#C54D3C] text-white px-10 py-4 rounded-none font-black uppercase tracking-widest hover:bg-white hover:text-[#C54D3C] transition-all clip-path-slant">
+                            <button className="bg-[#C54D3C] text-white px-10 py-4 rounded-none font-black uppercase tracking-widest hover:bg-black hover:text-white transition-all clip-path-slant">
                                 View Collection
                             </button>
                         </Link>
-                        <button className="border border-white/30 text-white px-10 py-4 rounded-none font-bold uppercase tracking-widest hover:border-white transition-all backdrop-blur-sm">
+                        <button className="border border-black/30 text-black px-10 py-4 rounded-none font-bold uppercase tracking-widest hover:border-black transition-all backdrop-blur-sm">
                             Learn More
                         </button>
                     </div>
@@ -60,9 +60,9 @@ export default function NexxPage() {
             </section>
 
             {/* Categories / Grid */}
-            <section id="helmets" className="py-24 bg-zinc-950">
+            <section id="helmets" className="py-24 bg-gray-50">
                 <div className="container mx-auto px-6">
-                    <div className="flex justify-between items-end mb-12 border-b border-gray-800 pb-6">
+                    <div className="flex justify-between items-end mb-12 border-b border-gray-200 pb-6">
                         <h2 className="text-4xl md:text-5xl font-black uppercase italic tracking-tighter">
                             New <span className="text-[#C54D3C]">Arrivals</span>
                         </h2>
@@ -73,16 +73,16 @@ export default function NexxPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[1, 2, 3].map((i) => (
-                            <div key={i} className="group relative h-[500px] bg-zinc-900 overflow-hidden border border-zinc-800 hover:border-[#C54D3C] transition-colors">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10" />
+                            <div key={i} className="group relative h-[500px] bg-white overflow-hidden border border-gray-200 hover:border-[#C54D3C] transition-colors">
+                                <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/40 to-transparent z-10" />
                                 <img
-                                    src={'https://images.unsplash.com/photo-1622185124011-817651a0279f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'}
+                                    src={'https://nexx-helmets.com/wp-content/uploads/2025/10/XRALLY_RAID_BLUE_RED_SIDE-300x300.png'}
                                     alt="Helmet"
                                     className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                                 />
                                 <div className="absolute bottom-0 left-0 w-full p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform">
                                     <h3 className="text-3xl font-black uppercase italic mb-2">Nexx X.WED {i + 2}</h3>
-                                    <p className="text-gray-400 mb-6 line-clamp-2">Carbon fiber shell with X-Matrix 2 technology. Ultimate adventure versatility.</p>
+                                    <p className="text-gray-600 mb-6 line-clamp-2">Carbon fiber shell with X-Matrix 2 technology. Ultimate adventure versatility.</p>
                                     <span className="text-[#C54D3C] font-bold uppercase tracking-wider text-sm flex items-center gap-2">
                                         View Details <ArrowRight size={16} />
                                     </span>
@@ -94,21 +94,23 @@ export default function NexxPage() {
             </section>
 
             {/* Technology / Features */}
-            <section id="about" className="py-24 bg-black relative overflow-hidden">
+            <section id="about" className="py-24 bg-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C54D3C] to-transparent opacity-50" />
 
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="relative">
                         <div className="absolute -inset-4 bg-[#C54D3C] blur-[100px] opacity-20 rounded-full" />
-                        <div className="relative z-10 border-2 border-zinc-800 bg-zinc-900 p-8 h-[400px] flex items-center justify-center">
-                            <div className="text-4xl text-zinc-700 font-black italic">X-MATRIX 2</div>
-                        </div>
+                        <img
+                            src="https://nexx-helmets.com/wp-content/uploads/sb-instagram-feed-images/612336352_1334536158711011_5161154648921028489_nfull.webp"
+                            alt="Technology"
+                            className="relative z-10 border-2 border-zinc-800 bg-zinc-900 p-2"
+                        />
                     </div>
                     <div className="space-y-8">
                         <h2 className="text-4xl md:text-5xl font-black uppercase italic leading-tight">
                             Advanced <br /><span className="text-[#C54D3C]">Composite Tech</span>
                         </h2>
-                        <p className="text-gray-400 text-lg leading-relaxed">
+                        <p className="text-gray-600 text-lg leading-relaxed">
                             Nexx Helmets are crafted with X-Matrix 2 technology, combining fiberglass, 3D organic fibers, and aramid reinforcements for superior strength and lightness.
                         </p>
 
@@ -134,10 +136,10 @@ export default function NexxPage() {
             </section>
 
             {/* Footer */}
-            <footer className="bg-zinc-950 border-t border-zinc-900 py-16 text-center md:text-left">
+            <footer className="bg-gray-100 border-t border-gray-200 py-16 text-center md:text-left">
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
                     <div className="space-y-4">
-                        <div className="text-xl font-black italic tracking-tighter uppercase text-white">
+                        <div className="text-xl font-black italic tracking-tighter uppercase text-black">
                             Nexx <span className="text-[#C54D3C]">Helmets</span>
                         </div>
                         <p className="text-gray-500 text-sm">
@@ -146,36 +148,36 @@ export default function NexxPage() {
                         </p>
                     </div>
                     <div>
-                        <h4 className="font-bold uppercase mb-6 text-sm tracking-wider text-white">Shop</h4>
-                        <ul className="space-y-4 text-gray-500 text-sm">
-                            <li><a href="#" className="hover:text-white transition-colors">Adventure</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Touring</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Sport</a></li>
+                        <h4 className="font-bold uppercase mb-6 text-sm tracking-wider text-black">Shop</h4>
+                        <ul className="space-y-4 text-gray-600 text-sm">
+                            <li><a href="#" className="hover:text-black transition-colors">Adventure</a></li>
+                            <li><a href="#" className="hover:text-black transition-colors">Touring</a></li>
+                            <li><a href="#" className="hover:text-black transition-colors">Sport</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-bold uppercase mb-6 text-sm tracking-wider text-white">Support</h4>
-                        <ul className="space-y-4 text-gray-500 text-sm">
-                            <li><a href="#" className="hover:text-white transition-colors">Size Guide</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Warranty</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                        <h4 className="font-bold uppercase mb-6 text-sm tracking-wider text-black">Support</h4>
+                        <ul className="space-y-4 text-gray-600 text-sm">
+                            <li><a href="#" className="hover:text-black transition-colors">Size Guide</a></li>
+                            <li><a href="#" className="hover:text-black transition-colors">Warranty</a></li>
+                            <li><a href="#" className="hover:text-black transition-colors">Contact</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-bold uppercase mb-6 text-sm tracking-wider text-white">Newsletter</h4>
-                        <div className="flex bg-zinc-900 border border-zinc-800 p-1">
-                            <input type="email" placeholder="EMAIL ADDRESS" className="bg-transparent px-4 py-2 w-full text-sm focus:outline-none text-white placeholder-zinc-600" />
-                            <button className="bg-[#C54D3C] text-white px-4 py-2 font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">
+                        <h4 className="font-bold uppercase mb-6 text-sm tracking-wider text-black">Newsletter</h4>
+                        <div className="flex bg-white border border-gray-300 p-1">
+                            <input type="email" placeholder="EMAIL ADDRESS" className="bg-transparent px-4 py-2 w-full text-sm focus:outline-none text-black placeholder-gray-400" />
+                            <button className="bg-[#C54D3C] text-white px-4 py-2 font-bold uppercase text-xs hover:bg-black hover:text-white transition-colors">
                                 Join
                             </button>
                         </div>
                     </div>
                 </div>
-                <div className="container mx-auto px-6 mt-16 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-600">
+                <div className="container mx-auto px-6 mt-16 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
                     <p>© 2026 Nexx Helmets. All rights reserved.</p>
                     <div className="flex gap-4 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-white">Instagram</a>
-                        <a href="#" className="hover:text-white">Facebook</a>
+                        <a href="#" className="hover:text-black">Instagram</a>
+                        <a href="#" className="hover:text-black">Facebook</a>
                     </div>
                 </div>
             </footer>
