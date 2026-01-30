@@ -9,42 +9,42 @@ const MOCK_PRODUCTS = [
         id: "1",
         name: "Shaft 542 GT",
         description: "Full face helmet with aerodynamic design and superior ventilation.",
-        image: "https://placehold.co/600x600/111/444?text=Shaft+542",
+        image: "https://shafthelmets.com/wp-content/uploads/SH-236-ROMA.SOLID_.BL_.SL_.LAT_.DER_.png",
         price: "N/A"
     },
     {
         id: "2",
         name: "Shaft Pro 610",
         description: "Modular helmet for touring and city riding.",
-        image: "https://placehold.co/600x600/111/444?text=Shaft+Pro",
+        image: "https://shafthelmets.com/wp-content/uploads/SHPRO-343-DV.SOLID_.NG_.M.SL_.LAT-DER.png",
         price: "N/A"
     },
     {
         id: "3",
         name: "Shaft MX 320",
         description: "Off-road helmet for extreme conditions.",
-        image: "https://placehold.co/600x600/111/444?text=Shaft+MX",
+        image: "https://shafthelmets.com/wp-content/uploads/SH-596-SP-SOLID_0002__MG_4747.png",
         price: "N/A"
     },
     {
         id: "4",
         name: "Shaft Jet Custom",
         description: "Classic style with modern protection.",
-        image: "https://placehold.co/600x600/111/444?text=Shaft+Jet",
+        image: "https://shafthelmets.com/wp-content/uploads/0014_SHAFT-520-SECUENTIAL.MO_.N.M.FC_.N.LATERAL-1024x1024.png",
         price: "N/A"
     },
     {
         id: "5",
         name: "Shaft Carbon X",
         description: "Ultra-lightweight carbon fiber construction.",
-        image: "https://placehold.co/600x600/111/444?text=Carbon+X",
+        image: "https://shafthelmets.com/wp-content/uploads/SHAFT-551-PUKEY.png",
         price: "N/A"
     },
     {
         id: "6",
         name: "Shaft SH-PRO",
         description: "Professional racing spec helmet.",
-        image: "https://placehold.co/600x600/111/444?text=SH-PRO",
+        image: "https://shafthelmets.com/wp-content/uploads/0005_SHAFT-581-EVO.FLOW_.MR_.BL_.LATERAL.png",
         price: "N/A"
     },
 ];
@@ -109,7 +109,7 @@ export default function ShaftCatalogPage() {
                                 <p className="text-gray-500 text-sm mb-6 leading-relaxed flex-1">{product.description}</p>
 
                                 <a
-                                    href={`https://wa.me/18001234567?text=I'm interested in the ${product.name}`}
+                                    href={`https://wa.me/18298851616?text=Hello Shaft Dominicana, I'm interested in the ${product.name}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-[#C54D3C] hover:text-white font-black uppercase tracking-widest py-4 px-6 transition-all clip-path-slant"

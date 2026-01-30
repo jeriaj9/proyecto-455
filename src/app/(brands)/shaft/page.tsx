@@ -33,7 +33,7 @@ export default function ShaftPage() {
                 <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
 
                 {/* Placeholder for Hero Image - Ideally an aggressive rider shot */}
-                <div className="absolute inset-0 z-0 opacity-60 bg-[url('https://placehold.co/1920x1080/1a1a1a/FFF?text=Rider+Action+Shot')] bg-cover bg-center" />
+                <div className="absolute inset-0 z-0 opacity-60 bg-[url('https://shafthelmets.com/wp-content/uploads/1-ABSORCION-DE-IMPACTO.gif')] bg-cover bg-center" />
 
                 <div className="relative z-20 px-8 md:px-24 w-full md:w-2/3 space-y-6">
                     <div className="inline-block bg-[#C54D3C] text-black font-black uppercase text-xs px-3 py-1 mb-2 tracking-widest">
@@ -79,7 +79,7 @@ export default function ShaftPage() {
                             <div key={i} className="group relative h-[500px] bg-zinc-900 overflow-hidden border border-zinc-800 hover:border-[#C54D3C] transition-colors">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10" />
                                 <img
-                                    src={`https://placehold.co/600x800/111/444?text=Helmet+0${i}`}
+                                    src={'https://shafthelmets.com/wp-content/uploads/SHAFT-551-PUKEY.png'}
                                     alt="Helmet"
                                     className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                                 />
@@ -104,7 +104,7 @@ export default function ShaftPage() {
                     <div className="relative">
                         <div className="absolute -inset-4 bg-[#C54D3C] blur-[100px] opacity-20 rounded-full" />
                         <img
-                            src="https://placehold.co/800x800/000/333?text=Safety+Tech"
+                            src="https://shafthelmets.com/wp-content/uploads/4-EVALUACION.gif"
                             alt="Technology"
                             className="relative z-10 border-2 border-zinc-800 bg-zinc-900 p-2"
                         />
