@@ -168,7 +168,7 @@ export default function AutoServicesPage() {
                             <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#4E759C] transition-colors">
                                 <Facebook size={20} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#4E759C] transition-colors">
+                            <a href="https://www.instagram.com/autoservicios455/" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#4E759C] transition-colors">
                                 <Instagram size={20} />
                             </a>
                         </div>
@@ -179,11 +179,11 @@ export default function AutoServicesPage() {
                         <ul className="space-y-4 text-slate-400">
                             <li className="flex items-start gap-3">
                                 <MapPin className="mt-1 text-[#4E759C] shrink-0" size={18} />
-                                <span>123 Main Street, Santo Domingo, Dominican Republic</span>
+                                <span>Av. Núñez de Cáceres 455, Santo Domingo, Rep. Dom.</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="text-[#4E759C] shrink-0" size={18} />
-                                <span>+1 (829) 555-0455</span>
+                                <span>(809)-732-6422</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Clock className="text-[#4E759C] shrink-0" size={18} />
@@ -195,7 +195,7 @@ export default function AutoServicesPage() {
                     <div className="lg:col-span-2 h-64 rounded-xl overflow-hidden bg-slate-800 relative">
                         {/* Map Placeholder - Replace with actual Google Maps Embed */}
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.058721677351!2d-69.9312!3d18.4861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI5JzEwLjAiTiA2OcKwNTUnNTIuMyJX!5e0!3m2!1sen!2sdo!4v1620000000000!5m2!1sen!2sdo"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236.53565663170068!2d-69.95589765063913!3d18.457799884563475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea561f889cf10a9%3A0xc96ba24ef9561a70!2sLovato%20Auto%20Gas!5e0!3m2!1sen!2sdo!4v1769807510715!5m2!1sen!2sdo"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
