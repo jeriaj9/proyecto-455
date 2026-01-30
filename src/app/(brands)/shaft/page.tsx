@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Clock, Facebook, Instagram, MapPin, Phone, Shield, Wind, Zap } from "lucide-react";
 import ProjectDropdown from "@/components/ProjectDropdown";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ShaftPage() {
+    const { t } = useLanguage();
+
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-[#C54D3C] selection:text-white">
             {/* Navigation (Fixed) */}
@@ -18,9 +23,9 @@ export default function ShaftPage() {
                     />
                 </div>
                 <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest">
-                    <Link href="#helmets" className="hover:text-[#C54D3C] transition-colors">Helmets</Link>
-                    <Link href="#about" className="hover:text-[#C54D3C] transition-colors">Safety</Link>
-                    <Link href="/shaft/catalog" className="hover:text-[#C54D3C] transition-colors">Catalog</Link>
+                    <Link href="#helmets" className="hover:text-[#C54D3C] transition-colors">{t.shaft.helmets}</Link>
+                    <Link href="#about" className="hover:text-[#C54D3C] transition-colors">{t.shaft.technology}</Link>
+                    <Link href="/shaft/catalog" className="hover:text-[#C54D3C] transition-colors">{t.common.catalog}</Link>
                 </div>
                 <ProjectDropdown theme="dark" />
             </nav>
@@ -36,26 +41,25 @@ export default function ShaftPage() {
 
                 <div className="relative z-20 px-8 md:px-24 w-full md:w-2/3 space-y-6">
                     <div className="inline-block bg-[#C54D3C] text-black font-black uppercase text-xs px-3 py-1 mb-2 tracking-widest">
-                        Official Representative DO
+                        {t.shaft.officialRep}
                     </div>
                     <h1 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-[0.9]">
-                        Go Wild <br />
+                        {t.shaft.heroTitle} <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                            Stay Safe.
+                            {t.shaft.heroSubtitle}
                         </span>
                     </h1>
                     <p className="text-gray-400 text-lg md:text-xl max-w-md font-medium border-l-4 border-[#C54D3C] pl-4">
-                        Engineered for the streets. Designed for the bold.
-                        Experience the next level of protection.
+                        {t.shaft.heroDesc}
                     </p>
                     <div className="pt-8 flex flex-col md:flex-row gap-4">
                         <Link href="/shaft/catalog">
                             <button className="bg-[#C54D3C] text-white px-10 py-4 rounded-none font-black uppercase tracking-widest hover:bg-white hover:text-[#C54D3C] transition-all clip-path-slant">
-                                View Collection
+                                {t.common.viewCollection}
                             </button>
                         </Link>
                         <button className="border border-white/30 text-white px-10 py-4 rounded-none font-bold uppercase tracking-widest hover:border-white transition-all backdrop-blur-sm">
-                            Learn More
+                            {t.common.learnMore}
                         </button>
                     </div>
                 </div>
@@ -69,7 +73,7 @@ export default function ShaftPage() {
                             New <span className="text-[#C54D3C]">Arrivals</span>
                         </h2>
                         <Link href="/shaft/catalog" className="text-sm font-bold uppercase tracking-widest flex items-center hover:text-[#C54D3C] transition-colors">
-                            See All <ArrowRight className="ml-2 w-4 h-4" />
+                            {t.common.seeAll} <ArrowRight className="ml-2 w-4 h-4" />
                         </Link>
                     </div>
 
@@ -84,9 +88,9 @@ export default function ShaftPage() {
                                 />
                                 <div className="absolute bottom-0 left-0 w-full p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform">
                                     <h3 className="text-3xl font-black uppercase italic mb-2">Shaft PRO {500 + i * 10}</h3>
-                                    <p className="text-gray-400 mb-6 line-clamp-2">ECE 22.06 Safety Standard Certified. Aerodynamic shell.</p>
+                                    <p className="text-gray-400 mb-6 line-clamp-2">{t.shaft.safetyStandard}</p>
                                     <span className="text-[#C54D3C] font-bold uppercase tracking-wider text-sm flex items-center gap-2">
-                                        View Details <ArrowRight size={16} />
+                                        {t.common.viewDetails} <ArrowRight size={16} />
                                     </span>
                                 </div>
                             </div>
@@ -110,27 +114,27 @@ export default function ShaftPage() {
                     </div>
                     <div className="space-y-8">
                         <h2 className="text-4xl md:text-5xl font-black uppercase italic leading-tight">
-                            Advanced <br /><span className="text-[#C54D3C]">Protection System</span>
+                            {t.shaft.protectionSystem} <br /><span className="text-[#C54D3C]">{t.shaft.advanced}</span>
                         </h2>
                         <p className="text-gray-400 text-lg leading-relaxed">
-                            We don't just clear safety standards; we crush them. Our helmets are built using High-Impact ABS and Multi-Density EPS to absorb energy like never before.
+                            {t.shaft.protectionDesc}
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
                             <div className="space-y-3">
                                 <Shield className="w-10 h-10 text-[#C54D3C]" />
-                                <h3 className="text-xl font-bold uppercase">Certified Safety</h3>
-                                <p className="text-gray-500 text-sm">DOT & ECE 22.06 Approved globally.</p>
+                                <h3 className="text-xl font-bold uppercase">{t.shaft.certifiedSafety}</h3>
+                                <p className="text-gray-500 text-sm">{t.shaft.certifiedDesc}</p>
                             </div>
                             <div className="space-y-3">
                                 <Wind className="w-10 h-10 text-[#C54D3C]" />
-                                <h3 className="text-xl font-bold uppercase">Aero Dynamics</h3>
-                                <p className="text-gray-500 text-sm">Wind-tunnel tested for stability at speed.</p>
+                                <h3 className="text-xl font-bold uppercase">{t.shaft.aeroDynamics}</h3>
+                                <p className="text-gray-500 text-sm">{t.shaft.aeroDesc}</p>
                             </div>
                             <div className="space-y-3">
                                 <Zap className="w-10 h-10 text-[#C54D3C]" />
-                                <h3 className="text-xl font-bold uppercase">Impact Shell</h3>
-                                <p className="text-gray-500 text-sm">Thermoplastic technology for max absorption.</p>
+                                <h3 className="text-xl font-bold uppercase">{t.shaft.impactShell}</h3>
+                                <p className="text-gray-500 text-sm">{t.shaft.impactDesc}</p>
                             </div>
                         </div>
                     </div>
@@ -190,8 +194,7 @@ export default function ShaftPage() {
                             {/* <div className="text-2xl font-black italic tracking-tighter uppercase">AUTO SERVICIOS <span className="text-[#4E759C]">455</span></div> */}
                         </div>
                         <p className="text-gray-500 text-sm">
-                            Official representative in Dominican Republic.
-                            <br />Safety, Style, Speed.
+                            {t.shaft.footerDesc}
                         </p>
                         <div className="flex gap-4">
                             <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#4E759C] transition-colors">
@@ -204,7 +207,7 @@ export default function ShaftPage() {
                     </div>
 
                     <div>
-                        <h4 className="font-bold uppercase mb-6 text-[#A6C5E1]">Contact Info</h4>
+                        <h4 className="font-bold uppercase mb-6 text-[#A6C5E1]">{t.autoServices.contactInfo}</h4>
                         <ul className="space-y-4 text-slate-400">
                             <li className="flex items-start gap-3">
                                 <MapPin className="mt-1 text-[#4E759C] shrink-0" size={18} />

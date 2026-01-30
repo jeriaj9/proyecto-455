@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Clock, Facebook, Instagram, MapPin, Phone, Shield, Wind, Zap } from "lucide-react";
 import ProjectDropdown from "@/components/ProjectDropdown";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function NexxPage() {
+    const { t } = useLanguage();
+
     return (
         <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
             {/* Navigation (Fixed) */}
@@ -12,9 +17,9 @@ export default function NexxPage() {
                     <img src="https://nexx-helmets.com/wp-content/themes/nexx/images/logotype.svg" alt="Nexx Helmets" className="w-32 h-12 object-contain" />
                 </div>
                 <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest">
-                    <Link href="#helmets" className="hover:text-[#C54D3C] transition-colors">Helmets</Link>
-                    <Link href="#about" className="hover:text-[#C54D3C] transition-colors">Safety</Link>
-                    <Link href="/nexx/catalog" className="hover:text-[#C54D3C] transition-colors">Catalog</Link>
+                    <Link href="#helmets" className="hover:text-[#C54D3C] transition-colors">{t.nexx.helmets}</Link>
+                    <Link href="#about" className="hover:text-[#C54D3C] transition-colors">{t.nexx.safety}</Link>
+                    <Link href="/nexx/catalog" className="hover:text-[#C54D3C] transition-colors">{t.common.catalog}</Link>
                 </div>
                 <ProjectDropdown theme="light" />
             </nav>
@@ -33,17 +38,16 @@ export default function NexxPage() {
 
                 <div className="relative z-20 px-8 md:px-24 w-full md:w-2/3 space-y-6">
                     <div className="inline-block bg-[#C54D3C] text-black font-black uppercase text-xs px-3 py-1 mb-2 tracking-widest">
-                        Official Verified Dealer
+                        {t.nexx.innovation}
                     </div>
                     <h1 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-[0.9]">
-                        Ride <br />
+                        {t.nexx.heroTitle} <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">
-                            The Future.
+                            {t.nexx.heroSubtitle}
                         </span>
                     </h1>
                     <p className="text-gray-600 text-lg md:text-xl max-w-md font-medium border-l-4 border-[#C54D3C] pl-4">
-                        European innovation meets motorcycle passion.
-                        Technologically advanced helmets for every rider.
+                        {t.nexx.heroDesc}
                     </p>
                     <div className="pt-8 flex flex-col md:flex-row gap-4">
                         <Link href="/nexx/catalog">
@@ -107,27 +111,27 @@ export default function NexxPage() {
                     </div>
                     <div className="space-y-8">
                         <h2 className="text-4xl md:text-5xl font-black uppercase italic leading-tight">
-                            Advanced <br /><span className="text-[#C54D3C]">Composite Tech</span>
+                            {t.shaft.technology} <br /><span className="text-[#C54D3C]">{t.shaft.advanced}</span>
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed">
-                            Nexx Helmets are crafted with X-Matrix 2 technology, combining fiberglass, 3D organic fibers, and aramid reinforcements for superior strength and lightness.
+                            {t.nexx.technologyDesc}
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
                             <div className="space-y-3">
                                 <Shield className="w-10 h-10 text-[#C54D3C]" />
-                                <h3 className="text-xl font-bold uppercase">X-Matrix Shell</h3>
-                                <p className="text-gray-500 text-sm">Resistant, lightweight and flexible.</p>
+                                <h3 className="text-xl font-bold uppercase">{t.nexx.aerodynamicsTitle}</h3>
+                                <p className="text-gray-500 text-sm">{t.nexx.aerodynamicsDesc}</p>
                             </div>
                             <div className="space-y-3">
                                 <Wind className="w-10 h-10 text-[#C54D3C]" />
-                                <h3 className="text-xl font-bold uppercase">Air Dynamic</h3>
-                                <p className="text-gray-500 text-sm">Complex ventilation systems for varied conditions.</p>
+                                <h3 className="text-xl font-bold uppercase">{t.nexx.ventilationTitle}</h3>
+                                <p className="text-gray-500 text-sm">{t.nexx.ventilationDesc}</p>
                             </div>
                             <div className="space-y-3">
                                 <Zap className="w-10 h-10 text-[#C54D3C]" />
-                                <h3 className="text-xl font-bold uppercase">Vora Tech</h3>
-                                <p className="text-gray-500 text-sm">Innovative visor systems for wide field of view.</p>
+                                <h3 className="text-xl font-bold uppercase">{t.nexx.impactTitle}</h3>
+                                <p className="text-gray-500 text-sm">{t.nexx.impactDesc}</p>
                             </div>
                         </div>
                     </div>
@@ -189,7 +193,7 @@ export default function NexxPage() {
                             {/* <div className="text-2xl font-black italic tracking-tighter uppercase">AUTO SERVICIOS <span className="text-[#4E759C]">455</span></div> */}
                         </div>
                         <p className="text-slate-400">
-                            European innovation meets motorcycle passion. Technologically advanced helmets for every rider.
+                            {t.nexx.footerDesc}
                         </p>
                         <div className="flex gap-4">
                             <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#4E759C] transition-colors">
@@ -202,7 +206,7 @@ export default function NexxPage() {
                     </div>
 
                     <div>
-                        <h4 className="font-bold uppercase mb-6 text-[#A6C5E1]">Contact Info</h4>
+                        <h4 className="font-bold uppercase mb-6 text-[#A6C5E1]">{t.autoServices.contactInfo}</h4>
                         <ul className="space-y-4 text-slate-400">
                             <li className="flex items-start gap-3">
                                 <MapPin className="mt-1 text-[#4E759C] shrink-0" size={18} />

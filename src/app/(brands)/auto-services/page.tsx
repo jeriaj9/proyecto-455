@@ -3,8 +3,11 @@
 import Link from "next/link";
 import { Wrench, Disc, Thermometer, Car, Laptop, Filter, Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import ProjectDropdown from "@/components/ProjectDropdown";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AutoServicesPage() {
+    const { t } = useLanguage();
+
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
             {/* Header */}
@@ -15,9 +18,9 @@ export default function AutoServicesPage() {
                         <img src="/images/455AutoServicesLogo.jpg" alt="455 Auto Services" className="h-12 w-auto object-contain" />
                     </div>
                     <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest text-slate-600">
-                        <Link href="#services" className="hover:text-[#4E759C] transition-colors">Services</Link>
-                        <Link href="#about" className="hover:text-[#4E759C] transition-colors">About Us</Link>
-                        <Link href="#contact" className="hover:text-[#4E759C] transition-colors">Contact</Link>
+                        <Link href="#services" className="hover:text-[#4E759C] transition-colors">{t.common.services}</Link>
+                        <Link href="#about" className="hover:text-[#4E759C] transition-colors">{t.common.aboutUs}</Link>
+                        <Link href="#contact" className="hover:text-[#4E759C] transition-colors">{t.common.contact}</Link>
                     </div>
                     <ProjectDropdown theme="light" />
                 </div>
@@ -34,18 +37,18 @@ export default function AutoServicesPage() {
 
                 <div className="relative z-20 text-center space-y-6 px-4 max-w-4xl mx-auto">
                     <div className="inline-block bg-[#4E759C] text-white font-bold uppercase text-xs px-4 py-1 rounded-full mb-4 tracking-widest">
-                        Trusted Auto Care Since 2010
+                        {t.autoServices.trustedCare}
                     </div>
                     <h1 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white leading-tight">
-                        Expert Care for <br />
-                        <span className="text-[#A6C5E1]">Your Vehicle</span>
+                        {t.autoServices.expertCare} <br />
+                        <span className="text-[#A6C5E1]">{t.autoServices.yourVehicle}</span>
                     </h1>
                     <p className="text-xl text-slate-200 max-w-2xl mx-auto font-medium">
-                        Comprehensive auto repair and maintenance services. We keep you on the road with safety and reliability.
+                        {t.autoServices.heroDesc}
                     </p>
                     <div className="pt-8">
                         <a href="#services" className="bg-[#4E759C] text-white px-10 py-4 rounded-lg font-black uppercase tracking-widest hover:bg-[#A6C5E1] hover:text-[#4E759C] transition-all shadow-xl shadow-[#4E759C]/50 inline-block">
-                            Our Services
+                            {t.autoServices.ourServices}
                         </a>
                     </div>
                 </div>
@@ -64,22 +67,22 @@ export default function AutoServicesPage() {
                     </div>
                     <div className="space-y-8">
                         <h2 className="text-4xl font-black uppercase italic text-slate-800">
-                            Who <span className="text-[#4E759C]">We Are</span>
+                            {t.autoServices.whoWeAre}
                         </h2>
                         <p className="text-slate-600 text-lg leading-relaxed">
-                            At 455 Auto Services, we define ourselves by our commitment to quality and transparency. With over 15 years of experience in the automotive industry, our team of certified mechanics uses state-of-the-art diagnostic tools to ensure every vehicle receives the best care possible.
+                            {t.autoServices.aboutDesc1}
                         </p>
                         <p className="text-slate-600 text-lg leading-relaxed">
-                            Whether it's routine maintenance or complex repairs, we treat every car as if it were our own. We believe in honest pricing and quick turnaround times so you can get back on the road safely.
+                            {t.autoServices.aboutDesc2}
                         </p>
                         <div className="flex gap-8 pt-4">
                             <div>
                                 <h3 className="text-3xl font-black text-[#4E759C]">15+</h3>
-                                <p className="text-sm font-bold uppercase text-slate-400">Years Exp.</p>
+                                <p className="text-sm font-bold uppercase text-slate-400">{t.autoServices.yearsExp}</p>
                             </div>
                             <div>
                                 <h3 className="text-3xl font-black text-[#4E759C]">5k+</h3>
-                                <p className="text-sm font-bold uppercase text-slate-400">Happy Clients</p>
+                                <p className="text-sm font-bold uppercase text-slate-400">{t.autoServices.happyClients}</p>
                             </div>
                         </div>
                     </div>
@@ -91,10 +94,10 @@ export default function AutoServicesPage() {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16 max-w-2xl mx-auto">
                         <h2 className="text-4xl font-black uppercase italic text-slate-800 mb-4">
-                            Our <span className="text-[#4E759C]">Services</span>
+                            {t.autoServices.ourServices}
                         </h2>
                         <p className="text-slate-500">
-                            We offer a complete range of automotive services to keep your vehicle running at peak performance.
+                            {t.autoServices.servicesDesc}
                         </p>
                     </div>
 
@@ -104,48 +107,48 @@ export default function AutoServicesPage() {
                             <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
                                 <Car size={32} />
                             </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">Oil Change</h3>
-                            <p className="text-slate-500">Premium synthetic and conventional oil changes to protect your engine and improve efficiency.</p>
+                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.oilChange}</h3>
+                            <p className="text-slate-500">{t.autoServices.oilDesc}</p>
                         </div>
 
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
                             <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
                                 <Thermometer size={32} />
                             </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">A/C Repair</h3>
-                            <p className="text-slate-500">Complete air conditioning diagnostics, recharging, and repair to keep you cool.</p>
+                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.acRepair}</h3>
+                            <p className="text-slate-500">{t.autoServices.acDesc}</p>
                         </div>
 
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
                             <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
                                 <Disc size={32} />
                             </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">Brake Bands</h3>
-                            <p className="text-slate-500">Brake pad replacement, rotor resurfacing, and system checks for maximum stopping power.</p>
+                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.brakeBands}</h3>
+                            <p className="text-slate-500">{t.autoServices.brakeDesc}</p>
                         </div>
 
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
                             <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
                                 <Wrench size={32} />
                             </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">Accessories</h3>
-                            <p className="text-slate-500">Installation of custom lights, audio systems, racks, and other vehicle enhancements.</p>
+                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.accessories}</h3>
+                            <p className="text-slate-500">{t.autoServices.accessoriesDesc}</p>
                         </div>
 
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
                             <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
                                 <Laptop size={32} />
                             </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">Diagnostics</h3>
-                            <p className="text-slate-500">Computerized engine diagnostics to accurately identify and fix any warning lights or issues.</p>
+                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.diagnostics}</h3>
+                            <p className="text-slate-500">{t.autoServices.diagnosticsDesc}</p>
                         </div>
 
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
                             <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
                                 <Filter size={32} />
                             </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">Preventive</h3>
-                            <p className="text-slate-500">Regular check-ups, fluid top-offs, and filter replacements to prevent costly future repairs.</p>
+                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.preventive}</h3>
+                            <p className="text-slate-500">{t.autoServices.preventiveDesc}</p>
                         </div>
                     </div>
                 </div>
@@ -161,7 +164,7 @@ export default function AutoServicesPage() {
                             {/* <div className="text-2xl font-black italic tracking-tighter uppercase">AUTO SERVICIOS <span className="text-[#4E759C]">455</span></div> */}
                         </div>
                         <p className="text-slate-400">
-                            Your trusted partner for all automotive needs. Professional service with a personal touch.
+                            {t.autoServices.footerDesc}
                         </p>
                         <div className="flex gap-4">
                             <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#4E759C] transition-colors">
@@ -174,7 +177,7 @@ export default function AutoServicesPage() {
                     </div>
 
                     <div>
-                        <h4 className="font-bold uppercase mb-6 text-[#A6C5E1]">Contact Info</h4>
+                        <h4 className="font-bold uppercase mb-6 text-[#A6C5E1]">{t.autoServices.contactInfo}</h4>
                         <ul className="space-y-4 text-slate-400">
                             <li className="flex items-start gap-3">
                                 <MapPin className="mt-1 text-[#4E759C] shrink-0" size={18} />
