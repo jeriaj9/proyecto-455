@@ -14,7 +14,7 @@ export default function NexxPage() {
             <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-black/90 bg-white/90 backdrop-blur-md transition-all">
                 <div className="relative group cursor-pointer w-32 h-12 flex items-center">
                     {/* Logo Image Placeholder */}
-                    <img src="https://nexx-helmets.com/wp-content/themes/nexx/images/logotype.svg" alt="Nexx Helmets" className="w-32 h-12 object-contain" />
+                    <img src="/images/nexxLogo.svg" alt="Nexx Helmets" className="w-32 h-12 object-contain" />
                 </div>
                 <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest">
                     <Link href="#helmets" className="hover:text-[#C54D3C] transition-colors">{t.nexx.helmets}</Link>
@@ -189,7 +189,7 @@ export default function NexxPage() {
                     <div className="space-y-6">
                         <div className="flex items-center gap-2">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src="https://nexx-helmets.com/wp-content/themes/nexx/images/logotype.svg" alt="Nexx Helmets" className="h-14 w-auto object-contain rounded-md" />
+                            <img src="/images/nexxLogo.svg" alt="Nexx Helmets" className="h-14 w-auto object-contain rounded-md" />
                             {/* <div className="text-2xl font-black italic tracking-tighter uppercase">AUTO SERVICIOS <span className="text-[#4E759C]">455</span></div> */}
                         </div>
                         <p className="text-slate-400">

@@ -2,60 +2,68 @@
 
 import { motion } from "framer-motion";
 
-type Brand = "shaft" | "auto-services" | "nexx";
+export type Brand = "shaft" | "auto-services" | "nexx";
 
 interface BrandLoaderProps {
     brand: Brand;
 }
 
 export default function BrandLoader({ brand }: BrandLoaderProps) {
-    const getLoaderContent = () => {
+    const getBrandConfig = () => {
         switch (brand) {
             case "shaft":
-                return (
-                    <div className="flex flex-col items-center justify-center space-y-4">
-                        <motion.div
-                            animate={{ rotate: 360 }}
-                            transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                            className="w-16 h-16 border-4 border-[#C54D3C] rounded-full border-t-transparent"
-                        />
-                        <p className="text-xl font-bold text-[#C54D3C]">Loading Shaft Dominicana</p>
-                    </div>
-                );
+                return {
+                    logo: "/images/ShaftLogo.png",
+                    bg: "bg-black",
+                    width: "w-64"
+                };
             case "auto-services":
-                return (
-                    <div className="flex flex-col items-center justify-center space-y-4">
-                        {/* Placeholder for Vehicle + Tools animation */}
-                        <motion.div
-                            animate={{ x: [-10, 10, -10] }}
-                            transition={{ repeat: Infinity, duration: 1.5 }}
-                            className="text-4xl"
-                        >
-                            🚗 🔧
-                        </motion.div>
-                        <p className="text-xl font-bold text-green-600">Preparing Your Service</p>
-                    </div>
-                );
+                return {
+                    logo: "/images/455AutoServicesLogo.jpg",
+                    bg: "bg-slate-900", // Darker for loader to make white reveal pop or just dark context
+                    width: "w-64"
+                };
             case "nexx":
-                return (
-                    <div className="flex flex-col items-center justify-center space-y-4">
-                        {/* Placeholder for 4x4 animation */}
-                        <motion.div
-                            animate={{ y: [0, -5, 0] }}
-                            transition={{ repeat: Infinity, duration: 0.8 }}
-                            className="text-4xl"
-                        >
-                            🚙 ⛰️
-                        </motion.div>
-                        <p className="text-xl font-bold text-orange-600">Exploring New Roads</p>
-                    </div>
-                );
+                return {
+                    logo: "/images/nexxLogo.svg",
+                    bg: "bg-neutral-950",
+                    width: "w-48"
+                };
+            default:
+                return {
+                    logo: "",
+                    bg: "bg-black",
+                    width: "w-64"
+                };
         }
     };
 
+    const config = getBrandConfig();
+
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
-            {getLoaderContent()}
+        <div className={`fixed inset-0 z-[60] flex items-center justify-center ${config.bg}`}>
+            <div className={`relative ${config.width}`}>
+                {/* Monochrome Base */}
+                <img
+                    src={config.logo}
+                    alt={`${brand} loader`}
+                    className="w-full h-auto object-contain grayscale opacity-30"
+                />
+
+                {/* Color Reveal Overlay */}
+                <motion.div
+                    className="absolute inset-0 overflow-hidden"
+                    initial={{ clipPath: "inset(0 100% 0 0)" }}
+                    animate={{ clipPath: "inset(0 0 0 0)" }}
+                    transition={{ duration: 2.5, ease: "easeInOut" }}
+                >
+                    <img
+                        src={config.logo}
+                        alt={`${brand} reveal`}
+                        className="w-full h-auto object-contain"
+                    />
+                </motion.div>
+            </div>
         </div>
     );
 }
