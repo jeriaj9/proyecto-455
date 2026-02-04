@@ -3,55 +3,34 @@
 import Link from "next/link";
 import { ArrowLeft, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
 
-// Mock data for initial development - Nexx Helmets
-const MOCK_PRODUCTS = [
-    {
-        id: "1",
-        name: "Nexx X.WED 2",
-        description: "The ultimate adventure helmet, ready for any terrain.",
-        image: "https://nexx-helmets.com/wp-content/uploads/2025/10/XRALLY_PLAIN_BSSSLACK_SIDE-300x300.png",
-        price: "N/A"
-    },
-    {
-        id: "2",
-        name: "Nexx X.R3R",
-        description: "Born for the track, uncompromising sport performance.",
-        image: "https://nexx-helmets.com/wp-content/uploads/2024/01/X.WED3_ZERO-PRO-Carbon-MT-2-300x300.png",
-        price: "N/A"
-    },
-    {
-        id: "3",
-        name: "Nexx X.VILITUR",
-        description: "Dynamic, elegant and robust modular touring helmet.",
-        image: "https://nexx-helmets.com/wp-content/uploads/2024/01/X.WED3_ZERO-PRO-Carbon-MT-2-300x300.png",
-        price: "N/A"
-    },
-    {
-        id: "4",
-        name: "Nexx SX.100",
-        description: "Urban style with premium features at a competitive price.",
-        image: "https://nexx-helmets.com/wp-content/uploads/2023/11/Y.10_PLAIN_BLACK-MT2-300x300.png",
-        price: "N/A"
-    },
-    {
-        id: "5",
-        name: "Nexx X.G100",
-        description: "Retro style meets modern safety standards.",
-        image: "https://nexx-helmets.com/wp-content/uploads/2024/11/XLIFECOUNTRY_PLAIN_BLACK_LAT-15362346-1-300x300.png",
-        price: "N/A"
-    },
-    {
-        id: "6",
-        name: "Nexx Y.10",
-        description: "Open face freedom with maximum protection.",
-        image: "https://nexx-helmets.com/wp-content/uploads/2025/10/XTR_PLAIN_BLACK_SIDE-300x300.png",
-        price: "N/A"
-    },
-];
+// Mock data removed
+
 
 export default function NexxCatalogPage() {
     const { t } = useLanguage();
+    const [products, setProducts] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function loadProducts() {
+            try {
+                const res = await fetch('/data/nexx-products.json');
+                if (res.ok) {
+                    const data = await res.json();
+                    setProducts(data);
+                } else {
+                    console.error("Failed to load products");
+                }
+            } catch (error) {
+                console.error("Error loading products", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        loadProducts();
+    }, []);
 
     return (
         <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
@@ -85,47 +64,47 @@ export default function NexxCatalogPage() {
                             Explore our range of premium European helmets designed for every riding style.
                         </p>
                     </div>
-                    {/* Filter placeholder */}
-                    <div className="mt-8 md:mt-0 flex gap-4">
-                        <button className="text-sm font-bold uppercase tracking-widest text-[#C54D3C] border-b border-[#C54D3C]">{t.common.all}</button>
-                        <button className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors">Adventure</button>
-                        <button className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors">Sport</button>
-                    </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {MOCK_PRODUCTS.map((product) => (
-                        <div key={product.id} className="group bg-white border border-gray-200 hover:border-[#C54D3C] transition-all duration-300 flex flex-col">
-                            <div className="aspect-square relative overflow-hidden bg-gray-100">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                    src={product.image}
-                                    alt={product.name}
-                                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                                />
-                                {/* Overlay Tag */}
-                                <div className="absolute top-4 right-4 bg-[#C54D3C] text-white text-[10px] font-black uppercase px-2 py-1 tracking-widest">
-                                    {t.common.new}
+                {loading ? (
+                    <div className="flex justify-center items-center h-64">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#C54D3C]"></div>
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {products.map((product) => (
+                            <div key={product.id} className="group bg-white border border-gray-200 hover:border-[#C54D3C] transition-all duration-300 flex flex-col">
+                                <div className="aspect-square relative overflow-hidden bg-gray-100">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        src={product.image_url}
+                                        alt={product.name}
+                                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                                    />
+                                    {/* Overlay Tag */}
+                                    {/* <div className="absolute top-4 right-4 bg-[#C54D3C] text-white text-[10px] font-black uppercase px-2 py-1 tracking-widest">
+                                        {t.common.new}
+                                    </div> */}
+                                </div>
+
+                                <div className="p-8 flex-1 flex flex-col items-start">
+                                    <h3 className="text-2xl font-black uppercase italic text-black mb-2">{product.name}</h3>
+                                    <p className="text-gray-600 text-sm mb-6 leading-relaxed flex-1">{product.description}</p>
+
+                                    <a
+                                        href={`https://wa.me/18298851616?text=Hello, I'm interested in the ${product.name}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full flex items-center justify-center gap-2 bg-black text-white hover:bg-[#C54D3C] hover:text-white font-black uppercase tracking-widest py-4 px-6 transition-all clip-path-slant"
+                                    >
+                                        <MessageCircle size={18} />
+                                        {t.common.inquireNow}
+                                    </a>
                                 </div>
                             </div>
-
-                            <div className="p-8 flex-1 flex flex-col items-start">
-                                <h3 className="text-2xl font-black uppercase italic text-black mb-2">{product.name}</h3>
-                                <p className="text-gray-600 text-sm mb-6 leading-relaxed flex-1">{product.description}</p>
-
-                                <a
-                                    href={`https://wa.me/18298851616?text=Hello, I'm interested in the ${product.name}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full flex items-center justify-center gap-2 bg-black text-white hover:bg-[#C54D3C] hover:text-white font-black uppercase tracking-widest py-4 px-6 transition-all clip-path-slant"
-                                >
-                                    <MessageCircle size={18} />
-                                    {t.common.inquireNow}
-                                </a>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
             </main>
 
             <footer className="py-8 text-center text-gray-500 text-xs uppercase tracking-widest">

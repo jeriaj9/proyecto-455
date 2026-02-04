@@ -1,0 +1,23 @@
+[
+  {
+    "id": "nexx-helmet-001",
+    "name": "Nexx  Pro Carbon Fiber Black",
+    "description": "Lightweight carbon fiber helmet with advanced ventilation and modern design.",
+    "category": "Offroad",
+    "image_url": "<https://example.com/images/nexx-pro-carbon-black.jpg>"
+  },
+  {
+    "id": "nexx-helmet-002",
+    "name": "NEXX X RALLY ",
+    "description": "The new X.RALLY is purpose-built for Hard Enduro riders, delivering exceptional lightness, comfort, and outstanding ventilation. Every detail has been optimized for control, comfort, and compatibility with off-road goggles, making it the perfect companion for the toughest and most technical terrain.",
+    "category": "Adventure",
+    "image_url": "https://nexx-helmets.com/wp-content/uploads/2025/10/XRALLY_GRAVIX_CARBON_WHITE_SIDE-300x300.png"
+  },
+  {
+    "id": "nexx-helmet-003",
+    "name": "NEXX X TR",
+    "description": "Setting a new benchmark in sport touring innovation, X.TR arrives as the ultimate fusion of performance, comfort, and cutting-edge technology.",
+    "category": "Atlantic",
+    "image_url": "https://nexx-helmets.com/wp-content/uploads/2025/10/XTR_ATLANTIC_CARBON_BLUE_SIDE_IRIDIUM_VISOR-300x300.png"
+  }
+]

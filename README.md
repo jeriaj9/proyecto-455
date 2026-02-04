@@ -1,20 +1,21 @@
 # PROJECT 455 - Web Platform
 
-A modern, multi-brand web platform for Project 455 SRL, featuring independent identities for Shaft Dominicana, Auto Servicios 455, and 455 Offroad.
+A modern, multi-brand web platform for Project 455 SRL, featuring independent identities for Shaft Dominicana, Auto Servicios 455, and Nexx Helmets.
 
 ## Tech Stack
 - **Framework**: Next.js 14+ (App Router)
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
-- **Database**: SQLite (via Prisma ORM) - Ready for PostgreSQL
-- **Icons**: Lucide React
+- **Data Source**: Google Sheets (Static JSON)
+- **Automation**: GitHub Actions
 
 ## Project Structure
 - `/src/app/(brands)/shaft`: Shaft Dominicana (Landing + Catalog)
 - `/src/app/(brands)/auto-services`: Auto Servicios 455 (Informational)
-- `/src/app/(brands)/offroad`: 455 Offroad (Inspirational)
-- `/src/app/admin`: Internal Admin Panel
+- `/src/app/(brands)/nexx`: Nexx Helmets (Landing + Catalog)
 - `/src/components`: Shared UI & Brand Loaders
+- `/scripts`: Data fetching utility
+- `/public/data`: Generated static JSON files
 
 ## Getting Started
 
@@ -23,11 +24,12 @@ A modern, multi-brand web platform for Project 455 SRL, featuring independent id
    npm install
    ```
 
-2. **Setup Database**
-   This project uses SQLite for local development.
+2. **Update Product Data**
+   Fetch the latest data from Google Sheets and generate static JSON files:
    ```bash
-   npx prisma db push
+   npm run update-products
    ```
+   *Note: This runs automatically every 24 hours via GitHub Actions.*
 
 3. **Run Development Server**
    ```bash
@@ -41,20 +43,15 @@ A modern, multi-brand web platform for Project 455 SRL, featuring independent id
    npm start
    ```
 
-## Environment Variables
-Create a `.env` file (already included for dev):
-```
-DATABASE_URL="file:./dev.db"
-```
+## Data Management
+Product catalogs for Shaft and Nexx are managed via Google Sheets.
+- **Shaft Sheet**: [Google Sheet Link]
+- **Nexx Sheet**: [Google Sheet Link]
 
-## Admin Access
-- URL: `/admin/login`
-- Demo Credentials:
-  - Username: `admin`
-  - Password: `shaft123`
+The `update-products` script fetches these sheets, validates the data, and saves `shaft-products.json` and `nexx-products.json` to `/public/data`. The frontend consumes these static files.
 
 ## Features
 - **Brand Portals**: Dedicated sub-paths for each brand.
 - **Custom Loaders**: Unique animated transition for each brand identity.
-- **Product Catalog**: Shaft helmet showcase with WhatsApp integration.
+- **Product Catalog**: Shaft & Nexx helmet showcases with WhatsApp integration.
 - **Responsive**: Fully optimized for Mobile, Tablet, and Desktop.

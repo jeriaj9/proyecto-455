@@ -1,0 +1,41 @@
+name: Update Products
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # Runs at 00:00 UTC on the 1st of every month
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  update-products:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run update products script
+        run: npm run update-products
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add public/data/*.json
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update product catalogs [skip ci]"
+            git push
+          fi

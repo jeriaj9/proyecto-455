@@ -3,55 +3,35 @@
 import Link from "next/link";
 import { ArrowLeft, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
 
 // Mock data for initial development
-const MOCK_PRODUCTS = [
-    {
-        id: "1",
-        name: "Shaft 542 GT",
-        description: "Full face helmet with aerodynamic design and superior ventilation.",
-        image: "https://shafthelmets.com/wp-content/uploads/SH-236-ROMA.SOLID_.BL_.SL_.LAT_.DER_.png",
-        price: "N/A"
-    },
-    {
-        id: "2",
-        name: "Shaft Pro 610",
-        description: "Modular helmet for touring and city riding.",
-        image: "https://shafthelmets.com/wp-content/uploads/SHPRO-343-DV.SOLID_.NG_.M.SL_.LAT-DER.png",
-        price: "N/A"
-    },
-    {
-        id: "3",
-        name: "Shaft MX 320",
-        description: "Off-road helmet for extreme conditions.",
-        image: "https://shafthelmets.com/wp-content/uploads/SH-596-SP-SOLID_0002__MG_4747.png",
-        price: "N/A"
-    },
-    {
-        id: "4",
-        name: "Shaft Jet Custom",
-        description: "Classic style with modern protection.",
-        image: "https://shafthelmets.com/wp-content/uploads/0014_SHAFT-520-SECUENTIAL.MO_.N.M.FC_.N.LATERAL-1024x1024.png",
-        price: "N/A"
-    },
-    {
-        id: "5",
-        name: "Shaft Carbon X",
-        description: "Ultra-lightweight carbon fiber construction.",
-        image: "https://shafthelmets.com/wp-content/uploads/SHAFT-551-PUKEY.png",
-        price: "N/A"
-    },
-    {
-        id: "6",
-        name: "Shaft SH-PRO",
-        description: "Professional racing spec helmet.",
-        image: "https://shafthelmets.com/wp-content/uploads/0005_SHAFT-581-EVO.FLOW_.MR_.BL_.LATERAL.png",
-        price: "N/A"
-    },
-];
+// Mock data removed in favor of static JSON fetch
+
 
 export default function ShaftCatalogPage() {
     const { t } = useLanguage();
+    const [products, setProducts] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function loadProducts() {
+            try {
+                const res = await fetch('/data/shaft-products.json');
+                if (res.ok) {
+                    const data = await res.json();
+                    setProducts(data);
+                } else {
+                    console.error("Failed to load products");
+                }
+            } catch (error) {
+                console.error("Error loading products", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        loadProducts();
+    }, []);
 
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-[#C54D3C] selection:text-white">
@@ -83,47 +63,47 @@ export default function ShaftCatalogPage() {
                             Explore our range of certified helmets designed for safety, comfort, and speed.
                         </p>
                     </div>
-                    {/* Filter placeholder */}
-                    <div className="mt-8 md:mt-0 flex gap-4">
-                        <button className="text-sm font-bold uppercase tracking-widest text-[#C54D3C] border-b border-[#C54D3C]">{t.common.all}</button>
-                        <button className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Full Face</button>
-                        <button className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Modular</button>
-                    </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {MOCK_PRODUCTS.map((product) => (
-                        <div key={product.id} className="group bg-zinc-900 border border-zinc-800 hover:border-[#C54D3C] transition-all duration-300 flex flex-col">
-                            <div className="aspect-square relative overflow-hidden bg-zinc-950">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                    src={product.image}
-                                    alt={product.name}
-                                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                                />
-                                {/* Overlay Tag */}
-                                <div className="absolute top-4 right-4 bg-[#C54D3C] text-white text-[10px] font-black uppercase px-2 py-1 tracking-widest">
-                                    {t.common.new}
+                {loading ? (
+                    <div className="flex justify-center items-center h-64">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#C54D3C]"></div>
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {products.map((product) => (
+                            <div key={product.id} className="group bg-zinc-900 border border-zinc-800 hover:border-[#C54D3C] transition-all duration-300 flex flex-col">
+                                <div className="aspect-square relative overflow-hidden bg-zinc-950">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        src={product.image_url}
+                                        alt={product.name}
+                                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                                    />
+                                    {/* Overlay Tag */}
+                                    {/* <div className="absolute top-4 right-4 bg-[#C54D3C] text-white text-[10px] font-black uppercase px-2 py-1 tracking-widest">
+                                        {t.common.new}
+                                    </div> */}
+                                </div>
+
+                                <div className="p-8 flex-1 flex flex-col items-start">
+                                    <h3 className="text-2xl font-black uppercase italic text-white mb-2">{product.name}</h3>
+                                    <p className="text-gray-500 text-sm mb-6 leading-relaxed flex-1">{product.description}</p>
+
+                                    <a
+                                        href={`https://wa.me/18298851616?text=Hello Shaft Dominicana, I'm interested in the ${product.name}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-[#C54D3C] hover:text-white font-black uppercase tracking-widest py-4 px-6 transition-all clip-path-slant"
+                                    >
+                                        <MessageCircle size={18} />
+                                        {t.common.inquireNow}
+                                    </a>
                                 </div>
                             </div>
-
-                            <div className="p-8 flex-1 flex flex-col items-start">
-                                <h3 className="text-2xl font-black uppercase italic text-white mb-2">{product.name}</h3>
-                                <p className="text-gray-500 text-sm mb-6 leading-relaxed flex-1">{product.description}</p>
-
-                                <a
-                                    href={`https://wa.me/18298851616?text=Hello Shaft Dominicana, I'm interested in the ${product.name}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-[#C54D3C] hover:text-white font-black uppercase tracking-widest py-4 px-6 transition-all clip-path-slant"
-                                >
-                                    <MessageCircle size={18} />
-                                    {t.common.inquireNow}
-                                </a>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
             </main>
 
             <footer className="py-8 text-center text-zinc-800 text-xs uppercase tracking-widest">

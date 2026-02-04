@@ -1,0 +1,23 @@
+[
+  {
+    "id": "shaft-helmet-001",
+    "name": "SHAFT Pro Carbon Black",
+    "description": "Lightweight carbon fiber helmet with advanced ventilation and modern design.",
+    "category": "Urban",
+    "image_url": "<https://example.com/images/shaft-pro-carbon-black.jpg>"
+  },
+  {
+    "id": "shaft-helmet-002",
+    "name": "SH 236 ROMA",
+    "description": "El espíritu libre continúa latente en este nuevo SH-236 ROMA que se mueve inmerso en un mundo de pasión por las dos ruedas. Un casco abierto con un diseño retro, tapizado removible con detalles reflectivos y un diseño único, una coraza totalmente exclusiva con dos salidas de aire traseras. Adéntrate a la libertad con el SH-236 ROMA Solid.",
+    "category": "Urban",
+    "image_url": "https://shafthelmets.com/wp-content/uploads/SH-236-ROMA.SOLID_.BL_.SL_.LAT_.DER_.png"
+  },
+  {
+    "id": "shaft-helmet-003",
+    "name": "SH PRO 343 DV",
+    "description": "El espiritu deportivo, cuidado extremo",
+    "category": "Sport",
+    "image_url": "https://shafthelmets.com/wp-content/uploads/SHPRO-343-DV.SOLID_.NG_.M.SL_.LAT-DER.png"
+  }
+]
