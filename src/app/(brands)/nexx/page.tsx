@@ -214,7 +214,7 @@ export default function NexxPage() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="text-[#4E759C] shrink-0" size={18} />
-                                <span>(809)-732-6422</span>
+                                <a href="tel:+18097326422" className="hover:text-[#4E759C] transition-colors">(809)-732-6422</a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Clock className="text-[#4E759C] shrink-0" size={18} />
