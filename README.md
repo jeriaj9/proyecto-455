@@ -29,7 +29,7 @@ A modern, multi-brand web platform for Project 455 SRL, featuring independent id
    ```bash
    npm run update-products
    ```
-   *Note: This runs automatically every 24 hours via GitHub Actions.*
+   *Note: This runs automatically every month via GitHub Actions.*
 
 3. **Run Development Server**
    ```bash
