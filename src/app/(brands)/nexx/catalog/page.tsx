@@ -12,6 +12,8 @@ export default function NexxCatalogPage() {
     const { t } = useLanguage();
     const [products, setProducts] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
+    const [categories, setCategories] = useState<string[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
     useEffect(() => {
         async function loadProducts() {
@@ -20,6 +22,10 @@ export default function NexxCatalogPage() {
                 if (res.ok) {
                     const data = await res.json();
                     setProducts(data);
+
+                    // Extract and normalize categories
+                    const uniqueCategories = Array.from(new Set(data.map((p: any) => p.category?.trim()))).filter(Boolean) as string[];
+                    setCategories(uniqueCategories.sort());
                 } else {
                     console.error("Failed to load products");
                 }
@@ -31,6 +37,10 @@ export default function NexxCatalogPage() {
         }
         loadProducts();
     }, []);
+
+    const filteredProducts = selectedCategory === 'all'
+        ? products
+        : products.filter(p => p.category?.trim() === selectedCategory);
 
     return (
         <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
@@ -66,13 +76,40 @@ export default function NexxCatalogPage() {
                     </div>
                 </div>
 
+                {/* Filter Bar */}
+                {!loading && categories.length > 0 && (
+                    <div className="mb-10 flex flex-wrap gap-4">
+                        <button
+                            onClick={() => setSelectedCategory('all')}
+                            className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all border ${selectedCategory === 'all'
+                                    ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
+                                    : 'bg-transparent border-gray-300 text-gray-500 hover:border-black hover:text-black'
+                                }`}
+                        >
+                            {t.common.all}
+                        </button>
+                        {categories.map((cat) => (
+                            <button
+                                key={cat}
+                                onClick={() => setSelectedCategory(cat)}
+                                className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all border ${selectedCategory === cat
+                                        ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
+                                        : 'bg-transparent border-gray-300 text-gray-500 hover:border-black hover:text-black'
+                                    }`}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+                )}
+
                 {loading ? (
                     <div className="flex justify-center items-center h-64">
                         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#C54D3C]"></div>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {products.map((product) => (
+                        {filteredProducts.map((product) => (
                             <div key={product.id} className="group bg-white border border-gray-200 hover:border-[#C54D3C] transition-all duration-300 flex flex-col">
                                 <div className="aspect-square relative overflow-hidden bg-gray-100">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -81,13 +118,10 @@ export default function NexxCatalogPage() {
                                         alt={product.name}
                                         className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                                     />
-                                    {/* Overlay Tag */}
-                                    {/* <div className="absolute top-4 right-4 bg-[#C54D3C] text-white text-[10px] font-black uppercase px-2 py-1 tracking-widest">
-                                        {t.common.new}
-                                    </div> */}
                                 </div>
 
                                 <div className="p-8 flex-1 flex flex-col items-start">
+                                    <div className="text-xs font-bold text-[#C54D3C] uppercase tracking-widest mb-1">{product.category}</div>
                                     <h3 className="text-2xl font-black uppercase italic text-black mb-2">{product.name}</h3>
                                     <p className="text-gray-600 text-sm mb-6 leading-relaxed flex-1">{product.description}</p>
 
