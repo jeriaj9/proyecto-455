@@ -1,12 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { Wrench, Disc, Thermometer, Car, Laptop, Filter, Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import { Wrench, Disc, Thermometer, Car, Laptop, Filter, Phone, MapPin, Clock, Facebook, Instagram, MessageCircle, ArrowRight } from "lucide-react";
 import ProjectDropdown from "@/components/ProjectDropdown";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AutoServicesPage() {
     const { t } = useLanguage();
+
+    const getWhatsAppLink = (serviceName: string) => {
+        const message = t.autoServices.whatsappMessage.replace("{service_name}", serviceName);
+        return `https://wa.me/18097326422?text=${encodeURIComponent(message)}`;
+    };
 
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
@@ -108,7 +113,15 @@ export default function AutoServicesPage() {
                                 <Car size={32} />
                             </div>
                             <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.oilChange}</h3>
-                            <p className="text-slate-500">{t.autoServices.oilDesc}</p>
+                            <p className="text-slate-500 mb-6">{t.autoServices.oilDesc}</p>
+                            <a
+                                href={getWhatsAppLink(t.autoServices.oilChange)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
+                            >
+                                {t.common.requestInfo} <ArrowRight size={16} />
+                            </a>
                         </div>
 
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
@@ -116,7 +129,15 @@ export default function AutoServicesPage() {
                                 <Thermometer size={32} />
                             </div>
                             <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.acRepair}</h3>
-                            <p className="text-slate-500">{t.autoServices.acDesc}</p>
+                            <p className="text-slate-500 mb-6">{t.autoServices.acDesc}</p>
+                            <a
+                                href={getWhatsAppLink(t.autoServices.acRepair)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
+                            >
+                                {t.common.requestInfo} <ArrowRight size={16} />
+                            </a>
                         </div>
 
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
@@ -124,7 +145,15 @@ export default function AutoServicesPage() {
                                 <Disc size={32} />
                             </div>
                             <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.brakeBands}</h3>
-                            <p className="text-slate-500">{t.autoServices.brakeDesc}</p>
+                            <p className="text-slate-500 mb-6">{t.autoServices.brakeDesc}</p>
+                            <a
+                                href={getWhatsAppLink(t.autoServices.brakeBands)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
+                            >
+                                {t.common.requestInfo} <ArrowRight size={16} />
+                            </a>
                         </div>
 
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
@@ -132,7 +161,15 @@ export default function AutoServicesPage() {
                                 <Wrench size={32} />
                             </div>
                             <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.accessories}</h3>
-                            <p className="text-slate-500">{t.autoServices.accessoriesDesc}</p>
+                            <p className="text-slate-500 mb-6">{t.autoServices.accessoriesDesc}</p>
+                            <a
+                                href={getWhatsAppLink(t.autoServices.accessories)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
+                            >
+                                {t.common.requestInfo} <ArrowRight size={16} />
+                            </a>
                         </div>
 
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
@@ -140,7 +177,15 @@ export default function AutoServicesPage() {
                                 <Laptop size={32} />
                             </div>
                             <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.diagnostics}</h3>
-                            <p className="text-slate-500">{t.autoServices.diagnosticsDesc}</p>
+                            <p className="text-slate-500 mb-6">{t.autoServices.diagnosticsDesc}</p>
+                            <a
+                                href={getWhatsAppLink(t.autoServices.diagnostics)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
+                            >
+                                {t.common.requestInfo} <ArrowRight size={16} />
+                            </a>
                         </div>
 
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
@@ -148,7 +193,15 @@ export default function AutoServicesPage() {
                                 <Filter size={32} />
                             </div>
                             <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.preventive}</h3>
-                            <p className="text-slate-500">{t.autoServices.preventiveDesc}</p>
+                            <p className="text-slate-500 mb-6">{t.autoServices.preventiveDesc}</p>
+                            <a
+                                href={getWhatsAppLink(t.autoServices.preventive)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
+                            >
+                                {t.common.requestInfo} <ArrowRight size={16} />
+                            </a>
                         </div>
                     </div>
                 </div>

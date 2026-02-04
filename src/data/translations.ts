@@ -21,6 +21,7 @@ export const translations = {
             inquireNow: "Consultar Ahora",
             new: "Nuevo",
             catalogFooter: "Catálogo",
+            requestInfo: "Solicitar Info",
         },
         shaft: {
             helmets: "Cascos",
@@ -80,10 +81,11 @@ export const translations = {
             accessoriesDesc: "Instalación de luces personalizadas, audio, racks y otras mejoras.",
             diagnostics: "Diagnósticos",
             diagnosticsDesc: "Diagnósticos computarizados de motor para identificar problemas con precisión.",
-            preventive: "Preventivo",
+            preventive: "Mantenimiento preventivo",
             preventiveDesc: "Chequeos regulares y reemplazo de filtros para prevenir reparaciones costosas.",
             footerDesc: "Tu socio de confianza para todas las necesidades automotrices. Servicio profesional con un toque personal.",
             contactInfo: "Información de Contacto",
+            whatsappMessage: "Hola 455 Auto Servicios, quiero información sobre {service_name}.",
         }
     },
     en: {
@@ -108,6 +110,7 @@ export const translations = {
             inquireNow: "Inquire Now",
             new: "New",
             catalogFooter: "Catalog",
+            requestInfo: "Request Info",
         },
         shaft: {
             helmets: "Helmets",
@@ -167,10 +170,11 @@ export const translations = {
             accessoriesDesc: "Installation of custom lights, audio systems, racks, and other vehicle enhancements.",
             diagnostics: "Diagnostics",
             diagnosticsDesc: "Computerized engine diagnostics to accurately identify and fix any warning lights or issues.",
-            preventive: "Preventive",
+            preventive: "Preventive maintenance",
             preventiveDesc: "Regular check-ups, fluid top-offs, and filter replacements to prevent costly future repairs.",
             footerDesc: "Your trusted partner for all automotive needs. Professional service with a personal touch.",
             contactInfo: "Contact Info",
+            whatsappMessage: "Hello 455 Auto Services, I would like more information about {service_name}.",
         }
     }
 };
