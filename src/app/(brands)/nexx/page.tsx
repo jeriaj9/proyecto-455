@@ -9,6 +9,8 @@ import ProductVideoModal from "@/components/ProductVideoModal";
 import ProductCard from "@/components/ProductCard";
 import BrandFooter from "@/components/BrandFooter";
 import BrandHeader from "@/components/BrandHeader";
+import BrandHero from "@/components/BrandHero";
+import BrandNewArrivals from "@/components/BrandNewArrivals";
 
 export default function NexxPage() {
     const { t } = useLanguage();
@@ -45,75 +47,44 @@ export default function NexxPage() {
             />
 
             {/* Hero Section */}
-            <section className="relative h-screen flex items-center justify-start bg-white overflow-hidden">
-                {/* Abstract Background Elements */}
-                <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-[#C54D3C]/20 to-transparent skew-x-12 transform translate-x-1/4" />
-                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
-
-                {/* Placeholder for Hero Image */}
-                {/* <div className="absolute inset-0 z-0 opacity-60 bg-[url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center" /> */}
-                <video className="absolute inset-0 z-0 opacity-60" autoPlay playsInline loop muted poster="">
-                    <source src="/images/NexxHero.mp4" type="video/mp4" />
-                </video>
-
-                <div className="relative z-20 px-8 md:px-24 w-full md:w-2/3 space-y-6">
-                    <div className="inline-block bg-[#C54D3C] text-black font-black uppercase text-xs px-3 py-1 mb-2 tracking-widest">
-                        {t.nexx.innovation}
-                    </div>
-                    <h1 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-[0.9]">
-                        {t.nexx.heroTitle} <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">
-                            {t.nexx.heroSubtitle}
-                        </span>
-                    </h1>
-                    <p className="text-gray-600 text-lg md:text-xl max-w-md font-medium border-l-4 border-[#C54D3C] pl-4">
-                        {t.nexx.heroDesc}
-                    </p>
-                    <div className="pt-8 flex flex-col md:flex-row gap-4">
-                        <Link href="/nexx/catalog">
-                            <button className="bg-[#C54D3C] text-white px-10 py-4 rounded-none font-black uppercase tracking-widest hover:bg-black hover:text-white transition-all clip-path-slant">
-                                View Collection
-                            </button>
-                        </Link>
-                        <button className="border border-black/30 text-black px-10 py-4 rounded-none font-bold uppercase tracking-widest hover:border-black transition-all backdrop-blur-sm">
-                            Learn More
-                        </button>
-                    </div>
-                </div>
-            </section>
+            <BrandHero
+                theme="light"
+                brandColor="#C54D3C"
+                backgroundMedia={{
+                    type: 'video',
+                    src: '/images/NexxHero.mp4'
+                }}
+                badgeText={t.nexx.innovation}
+                title={t.nexx.heroTitle}
+                subtitle={t.nexx.heroSubtitle}
+                description={t.nexx.heroDesc}
+                buttons={{
+                    viewCollection: {
+                        text: "View Collection",
+                        href: "/nexx/catalog"
+                    },
+                    learnMore: {
+                        text: "Learn More"
+                    }
+                }}
+            />
 
             {/* Categories / Grid */}
-            <section id="helmets" className="py-24 bg-gray-50">
-                <div className="container mx-auto px-6">
-                    <div className="flex justify-between items-end mb-12 border-b border-gray-200 pb-6">
-                        <h2 className="text-4xl md:text-5xl font-black uppercase italic tracking-tighter">
-                            New <span className="text-[#C54D3C]">Arrivals</span>
-                        </h2>
-                        <Link href="/nexx/catalog" className="text-sm font-bold uppercase tracking-widest flex items-center hover:text-[#C54D3C] transition-colors">
-                            See All <ArrowRight className="ml-2 w-4 h-4" />
-                        </Link>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {products.slice(0, 3).map((product) => (
-                            <div key={product.id}>
-                                <ProductCard
-                                    product={product}
-                                    theme="light"
-                                    brandColor="#C54D3C"
-                                    texts={{
-                                        viewDetails: t.common.viewDetails,
-                                        inquireNow: t.common.inquireNow,
-                                        viewVideo: t.common.viewVideo
-                                    }}
-                                    onVideoClick={(url) => setVideoUrl(url)}
-                                    showActions={true}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <BrandNewArrivals
+                theme="light"
+                brandColor="#C54D3C"
+                products={products}
+                texts={{
+                    titlePrefix: "New",
+                    titleHighlight: "Arrivals",
+                    seeAll: "See All",
+                    viewDetails: t.common.viewDetails,
+                    inquireNow: t.common.inquireNow,
+                    viewVideo: t.common.viewVideo
+                }}
+                seeAllHref="/nexx/catalog"
+                onVideoClick={(url) => setVideoUrl(url)}
+            />
 
             {/* Technology / Features */}
             <section id="about" className="py-24 bg-white relative overflow-hidden">
