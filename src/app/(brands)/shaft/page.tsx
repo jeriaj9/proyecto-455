@@ -47,6 +47,7 @@ export default function ShaftPage() {
                     <Link href="#helmets" className="hover:text-[#e6ef5a] transition-colors">{t.shaft.helmets}</Link>
                     <Link href="#about" className="hover:text-[#e6ef5a] transition-colors">{t.shaft.technology}</Link>
                     <Link href="/shaft/catalog" className="hover:text-[#e6ef5a] transition-colors">{t.common.catalog}</Link>
+                    <Link href="/shaft/textile-catalog" className="hover:text-[#e6ef5a] transition-colors">{t.common.textileCatalog}</Link>
                 </div>
                 <ProjectDropdown theme="dark" />
             </nav>

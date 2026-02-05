@@ -7,6 +7,8 @@ const SHAFT_SHEET_ID = '1F_0KWY2alDAp5IqeE-Np-DkNUPs8kPFSMwzhchOolCs';
 const SHAFT_SHEET_NAME = 'shaft_products';
 const NEXX_SHEET_ID = '1A5d03OowFs1iFXrw35ldfTUXFq4oFSLSIrkwQaS-MK8';
 const NEXX_SHEET_NAME = 'nexx_products';
+const SHAFT_TEXTILE_SHEET_ID = '13Jln1AWW76Z4puAgIQXOH-zyZtfbwlzLGRDnvWJQ7oc';
+const SHAFT_TEXTILE_SHEET_NAME = 'shaft_textile_products';
 
 const OUTPUT_DIR = path.join(process.cwd(), 'public', 'data');
 
@@ -66,6 +68,11 @@ async function main() {
         const shaftProducts = await fetchGoogleSheet(SHAFT_SHEET_ID, SHAFT_SHEET_NAME);
         fs.writeFileSync(path.join(OUTPUT_DIR, 'shaft-products.json'), JSON.stringify(shaftProducts, null, 2));
         console.log(`Saved ${shaftProducts.length} Shaft products.`);
+
+        // Fetch Shaft Textile
+        const shaftTextileProducts = await fetchGoogleSheet(SHAFT_TEXTILE_SHEET_ID, SHAFT_TEXTILE_SHEET_NAME);
+        fs.writeFileSync(path.join(OUTPUT_DIR, 'shaft-textile-products.json'), JSON.stringify(shaftTextileProducts, null, 2));
+        console.log(`Saved ${shaftTextileProducts.length} Shaft Textile products.`);
 
         // Fetch Nexx
         const nexxProducts = await fetchGoogleSheet(NEXX_SHEET_ID, NEXX_SHEET_NAME);

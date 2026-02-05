@@ -23,6 +23,7 @@ export const translations = {
             catalogFooter: "Catálogo",
             requestInfo: "Solicitar Info",
             viewVideo: "Ver Video",
+            textileCatalog: "Textiles",
         },
         shaft: {
             helmets: "Cascos",
@@ -113,6 +114,7 @@ export const translations = {
             catalogFooter: "Catalog",
             requestInfo: "Request Info",
             viewVideo: "View Video",
+            textileCatalog: "Textiles",
         },
         shaft: {
             helmets: "Helmets",

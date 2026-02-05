@@ -1,0 +1,50 @@
+[
+  {
+    "id": "shaft-textile-001",
+    "name": "SH 335",
+    "description": "Lightweight carbon fiber Guante with advanced ventilation and modern design.",
+    "category": "Guante",
+    "image_url": "https://shafthelmets.com/wp-content/uploads/SH-335_0003_Capa-2-300x300.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-textile-002",
+    "name": "SH 310",
+    "description": "Lightweight carbon fiber Guante with advanced ventilation and modern design.",
+    "category": "Guante",
+    "image_url": "https://shafthelmets.com/wp-content/uploads/SH-310-T-1-edited-copy-300x300.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-textile-003",
+    "name": "SH Negro",
+    "description": "Lightweight carbon fiber Guante with advanced ventilation and modern design.",
+    "category": "Guante",
+    "image_url": "https://shafthelmets.com/wp-content/uploads/GUANTES-SH-NEGRO-PAR-DE-GUANTES-300x300.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-textile-004",
+    "name": "SH Nova",
+    "description": "Lightweight carbon fiber chaqueta with advanced ventilation and modern design.",
+    "category": "Chaqueta",
+    "image_url": "https://shafthelmets.com/wp-content/uploads/sh_nova_1000.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-textile-005",
+    "name": "SH Nitro",
+    "description": "Lightweight carbon fiber chaqueta with advanced ventilation and modern design.",
+    "category": "Chaqueta",
+    "image_url": "https://shafthelmets.com/wp-content/uploads/sh_nitro_1000.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-textile-006",
+    "name": "SH Delta",
+    "description": "Lightweight carbon fiber chaqueta with advanced ventilation and modern design.",
+    "category": "Chaqueta",
+    "image_url": "https://shafthelmets.com/wp-content/uploads/sh_delta_1000.png",
+    "video_url": ""
+  }
+]
