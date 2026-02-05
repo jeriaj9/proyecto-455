@@ -46,7 +46,7 @@ export default function ShaftCatalogPage() {
         : products.filter(p => p.category?.trim() === selectedCategory);
 
     return (
-        <div className="min-h-screen bg-black text-white font-sans selection:bg-[#C54D3C] selection:text-white">
+        <div className="min-h-screen bg-black text-white font-sans selection:bg-[#e6ef5a] selection:text-black">
             {/* Header */}
             <header className="sticky top-0 z-30 bg-black/90 backdrop-blur-md border-b border-zinc-900 py-6 px-8">
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -57,7 +57,7 @@ export default function ShaftCatalogPage() {
                     <div className="flex items-center gap-2">
                         <img src="/images/ShaftLogo.png" alt="Shaft Logo" className="h-8 w-auto brightness-0 invert" />
                         <span className="hidden md:inline text-xl font-black italic uppercase tracking-tighter">
-                            <span className="text-[#C54D3C]">/</span> {t.common.catalog}
+                            <span className="text-[#e6ef5a]">/</span> {t.common.catalog}
                         </span>
                     </div>
 
@@ -83,7 +83,7 @@ export default function ShaftCatalogPage() {
                         <button
                             onClick={() => setSelectedCategory('all')}
                             className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all border ${selectedCategory === 'all'
-                                ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
+                                ? 'bg-[#e6ef5a] border-[#e6ef5a] text-black'
                                 : 'bg-transparent border-zinc-800 text-gray-400 hover:border-white hover:text-white'
                                 }`}
                         >
@@ -94,7 +94,7 @@ export default function ShaftCatalogPage() {
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
                                 className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all border ${selectedCategory === cat
-                                    ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
+                                    ? 'bg-[#e6ef5a] border-[#e6ef5a] text-black'
                                     : 'bg-transparent border-zinc-800 text-gray-400 hover:border-white hover:text-white'
                                     }`}
                             >
@@ -106,12 +106,12 @@ export default function ShaftCatalogPage() {
 
                 {loading ? (
                     <div className="flex justify-center items-center h-64">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#C54D3C]"></div>
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#e6ef5a]"></div>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredProducts.map((product) => (
-                            <div key={product.id} className="group bg-zinc-900 border border-zinc-800 hover:border-[#C54D3C] transition-all duration-300 flex flex-col">
+                            <div key={product.id} className="group bg-zinc-900 border border-zinc-800 hover:border-[#e6ef5a] transition-all duration-300 flex flex-col">
                                 <div className="aspect-square relative overflow-hidden bg-zinc-950">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
@@ -122,7 +122,7 @@ export default function ShaftCatalogPage() {
                                 </div>
 
                                 <div className="p-8 flex-1 flex flex-col items-start">
-                                    <div className="text-xs font-bold text-[#C54D3C] uppercase tracking-widest mb-1">{product.category}</div>
+                                    <div className="text-xs font-bold text-[#e6ef5a] uppercase tracking-widest mb-1">{product.category}</div>
                                     <h3 className="text-2xl font-black uppercase italic text-white mb-2">{product.name}</h3>
                                     <p className="text-gray-500 text-sm mb-6 leading-relaxed flex-1">{product.description}</p>
 
@@ -130,7 +130,7 @@ export default function ShaftCatalogPage() {
                                         href={`https://wa.me/18298851616?text=Hello Shaft Dominicana, I'm interested in the ${product.name}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-[#C54D3C] hover:text-white font-black uppercase tracking-widest py-4 px-6 transition-all clip-path-slant"
+                                        className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-[#e6ef5a] hover:text-black font-black uppercase tracking-widest py-4 px-6 transition-all clip-path-slant"
                                     >
                                         <MessageCircle size={18} />
                                         {t.common.inquireNow}

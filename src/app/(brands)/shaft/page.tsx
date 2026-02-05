@@ -9,7 +9,7 @@ export default function ShaftPage() {
     const { t } = useLanguage();
 
     return (
-        <div className="min-h-screen bg-black text-white font-sans selection:bg-[#C54D3C] selection:text-white">
+        <div className="min-h-screen bg-black text-white font-sans selection:bg-[#e6ef5a] selection:text-black">
             {/* Navigation (Fixed) */}
             <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-white/90 bg-black/60 backdrop-blur-md transition-all">
                 <div className="relative group cursor-pointer w-32 h-12 flex items-center">
@@ -23,9 +23,9 @@ export default function ShaftPage() {
                     />
                 </div>
                 <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest">
-                    <Link href="#helmets" className="hover:text-[#C54D3C] transition-colors">{t.shaft.helmets}</Link>
-                    <Link href="#about" className="hover:text-[#C54D3C] transition-colors">{t.shaft.technology}</Link>
-                    <Link href="/shaft/catalog" className="hover:text-[#C54D3C] transition-colors">{t.common.catalog}</Link>
+                    <Link href="#helmets" className="hover:text-[#e6ef5a] transition-colors">{t.shaft.helmets}</Link>
+                    <Link href="#about" className="hover:text-[#e6ef5a] transition-colors">{t.shaft.technology}</Link>
+                    <Link href="/shaft/catalog" className="hover:text-[#e6ef5a] transition-colors">{t.common.catalog}</Link>
                 </div>
                 <ProjectDropdown theme="dark" />
             </nav>
@@ -33,14 +33,14 @@ export default function ShaftPage() {
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-start bg-black overflow-hidden">
                 {/* Abstract Background Elements */}
-                <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-[#C54D3C]/20 to-transparent skew-x-12 transform translate-x-1/4" />
+                <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-[#e6ef5a]/20 to-transparent skew-x-12 transform translate-x-1/4" />
                 <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
 
                 {/* Placeholder for Hero Image - Ideally an aggressive rider shot */}
                 <div className="absolute inset-0 z-0 opacity-60 bg-[url('https://shafthelmets.com/wp-content/uploads/1-ABSORCION-DE-IMPACTO.gif')] bg-cover bg-center" />
 
                 <div className="relative z-20 px-8 md:px-24 w-full md:w-2/3 space-y-6">
-                    <div className="inline-block bg-[#C54D3C] text-black font-black uppercase text-xs px-3 py-1 mb-2 tracking-widest">
+                    <div className="inline-block bg-[#e6ef5a] text-black font-black uppercase text-xs px-3 py-1 mb-2 tracking-widest">
                         {t.shaft.officialRep}
                     </div>
                     <h1 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-[0.9]">
@@ -49,12 +49,12 @@ export default function ShaftPage() {
                             {t.shaft.heroSubtitle}
                         </span>
                     </h1>
-                    <p className="text-gray-400 text-lg md:text-xl max-w-md font-medium border-l-4 border-[#C54D3C] pl-4">
+                    <p className="text-gray-400 text-lg md:text-xl max-w-md font-medium border-l-4 border-[#e6ef5a] pl-4">
                         {t.shaft.heroDesc}
                     </p>
                     <div className="pt-8 flex flex-col md:flex-row gap-4">
                         <Link href="/shaft/catalog">
-                            <button className="bg-[#C54D3C] text-white px-10 py-4 rounded-none font-black uppercase tracking-widest hover:bg-white hover:text-[#C54D3C] transition-all clip-path-slant">
+                            <button className="bg-[#e6ef5a] text-black px-10 py-4 rounded-none font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all clip-path-slant">
                                 {t.common.viewCollection}
                             </button>
                         </Link>
@@ -70,16 +70,16 @@ export default function ShaftPage() {
                 <div className="container mx-auto px-6">
                     <div className="flex justify-between items-end mb-12 border-b border-gray-800 pb-6">
                         <h2 className="text-4xl md:text-5xl font-black uppercase italic tracking-tighter">
-                            New <span className="text-[#C54D3C]">Arrivals</span>
+                            New <span className="text-[#e6ef5a]">Arrivals</span>
                         </h2>
-                        <Link href="/shaft/catalog" className="text-sm font-bold uppercase tracking-widest flex items-center hover:text-[#C54D3C] transition-colors">
+                        <Link href="/shaft/catalog" className="text-sm font-bold uppercase tracking-widest flex items-center hover:text-[#e6ef5a] transition-colors">
                             {t.common.seeAll} <ArrowRight className="ml-2 w-4 h-4" />
                         </Link>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[1, 2, 3].map((i) => (
-                            <div key={i} className="group relative h-[500px] bg-zinc-900 overflow-hidden border border-zinc-800 hover:border-[#C54D3C] transition-colors">
+                            <div key={i} className="group relative h-[500px] bg-zinc-900 overflow-hidden border border-zinc-800 hover:border-[#e6ef5a] transition-colors">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10" />
                                 <img
                                     src={'https://shafthelmets.com/wp-content/uploads/SHAFT-551-PUKEY.png'}
@@ -89,7 +89,7 @@ export default function ShaftPage() {
                                 <div className="absolute bottom-0 left-0 w-full p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform">
                                     <h3 className="text-3xl font-black uppercase italic mb-2">Shaft PRO {500 + i * 10}</h3>
                                     <p className="text-gray-400 mb-6 line-clamp-2">{t.shaft.safetyStandard}</p>
-                                    <span className="text-[#C54D3C] font-bold uppercase tracking-wider text-sm flex items-center gap-2">
+                                    <span className="text-[#e6ef5a] font-bold uppercase tracking-wider text-sm flex items-center gap-2">
                                         {t.common.viewDetails} <ArrowRight size={16} />
                                     </span>
                                 </div>
@@ -101,11 +101,11 @@ export default function ShaftPage() {
 
             {/* Technology / Features */}
             <section id="about" className="py-24 bg-black relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C54D3C] to-transparent opacity-50" />
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#e6ef5a] to-transparent opacity-50" />
 
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="relative">
-                        <div className="absolute -inset-4 bg-[#C54D3C] blur-[100px] opacity-20 rounded-full" />
+                        <div className="absolute -inset-4 bg-[#e6ef5a] blur-[100px] opacity-20 rounded-full" />
                         <img
                             src="https://shafthelmets.com/wp-content/uploads/4-EVALUACION.gif"
                             alt="Technology"
@@ -114,7 +114,7 @@ export default function ShaftPage() {
                     </div>
                     <div className="space-y-8">
                         <h2 className="text-4xl md:text-5xl font-black uppercase italic leading-tight">
-                            {t.shaft.protectionSystem} <br /><span className="text-[#C54D3C]">{t.shaft.advanced}</span>
+                            {t.shaft.protectionSystem} <br /><span className="text-[#e6ef5a]">{t.shaft.advanced}</span>
                         </h2>
                         <p className="text-gray-400 text-lg leading-relaxed">
                             {t.shaft.protectionDesc}
@@ -122,17 +122,17 @@ export default function ShaftPage() {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
                             <div className="space-y-3">
-                                <Shield className="w-10 h-10 text-[#C54D3C]" />
+                                <Shield className="w-10 h-10 text-[#e6ef5a]" />
                                 <h3 className="text-xl font-bold uppercase">{t.shaft.certifiedSafety}</h3>
                                 <p className="text-gray-500 text-sm">{t.shaft.certifiedDesc}</p>
                             </div>
                             <div className="space-y-3">
-                                <Wind className="w-10 h-10 text-[#C54D3C]" />
+                                <Wind className="w-10 h-10 text-[#e6ef5a]" />
                                 <h3 className="text-xl font-bold uppercase">{t.shaft.aeroDynamics}</h3>
                                 <p className="text-gray-500 text-sm">{t.shaft.aeroDesc}</p>
                             </div>
                             <div className="space-y-3">
-                                <Zap className="w-10 h-10 text-[#C54D3C]" />
+                                <Zap className="w-10 h-10 text-[#e6ef5a]" />
                                 <h3 className="text-xl font-bold uppercase">{t.shaft.impactShell}</h3>
                                 <p className="text-gray-500 text-sm">{t.shaft.impactDesc}</p>
                             </div>
