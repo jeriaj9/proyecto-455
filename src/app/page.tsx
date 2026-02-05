@@ -7,7 +7,7 @@ export default function Home() {
       <div className="max-w-4xl w-full space-y-12">
         <header className="text-center space-y-4">
           <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-blue-400 via-green-400 to-red-400 bg-clip-text text-transparent">
-            PROJECT 455
+            Proyecto 455
           </h1>
           <p className="text-gray-400 text-lg">
             Select a brand to explore our services and products.
@@ -15,7 +15,6 @@ export default function Home() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Shaft Dominicana */}
           <Link
             href="/shaft"
             className="group relative p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-900/20"
@@ -37,7 +36,6 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Auto Servicios 455 */}
           <Link
             href="/auto-services"
             className="group relative p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-green-500 transition-all duration-300 hover:shadow-2xl hover:shadow-green-900/20"
@@ -59,7 +57,6 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Nexx Helmets */}
           <Link
             href="/nexx"
             className="group relative p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-red-500 transition-all duration-300 hover:shadow-2xl hover:shadow-red-900/20"

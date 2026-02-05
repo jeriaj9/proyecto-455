@@ -11,7 +11,6 @@ interface ProductVideoModalProps {
 }
 
 export default function ProductVideoModal({ isOpen, onClose, videoUrl }: ProductVideoModalProps) {
-    // Close on escape key
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {
             if (e.key === "Escape") onClose();
@@ -20,7 +19,6 @@ export default function ProductVideoModal({ isOpen, onClose, videoUrl }: Product
         return () => window.removeEventListener("keydown", handleEsc);
     }, [onClose]);
 
-    // Prevent body scroll when open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -34,11 +32,6 @@ export default function ProductVideoModal({ isOpen, onClose, videoUrl }: Product
 
     const getEmbedUrl = (url: string) => {
         try {
-            // Handle various YouTube URL formats
-            // https://www.youtube.com/watch?v=VIDEO_ID
-            // https://youtu.be/VIDEO_ID
-            // https://www.youtube.com/embed/VIDEO_ID
-
             let videoId = "";
             const urlObj = new URL(url);
 
@@ -52,7 +45,7 @@ export default function ProductVideoModal({ isOpen, onClose, videoUrl }: Product
                 videoId = urlObj.pathname.slice(1);
             }
 
-            if (!videoId) return url; // Fallback if parsing fails
+            if (!videoId) return url;
 
             return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
         } catch (e) {
@@ -64,7 +57,6 @@ export default function ProductVideoModal({ isOpen, onClose, videoUrl }: Product
         <AnimatePresence>
             {isOpen && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 text-white">
-                    {/* Backdrop */}
                     <motion.div
                         className="absolute inset-0 bg-black/90 backdrop-blur-sm"
                         initial={{ opacity: 0 }}
@@ -73,7 +65,6 @@ export default function ProductVideoModal({ isOpen, onClose, videoUrl }: Product
                         onClick={onClose}
                     />
 
-                    {/* Modal Content */}
                     <motion.div
                         className="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden shadow-2xl border border-white/10"
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -81,7 +72,6 @@ export default function ProductVideoModal({ isOpen, onClose, videoUrl }: Product
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                     >
-                        {/* Close Button */}
                         <button
                             onClick={onClose}
                             className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black rounded-full transition-colors text-white"

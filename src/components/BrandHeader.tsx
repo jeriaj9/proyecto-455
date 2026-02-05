@@ -7,7 +7,7 @@ interface BrandHeaderProps {
     links: { label: string; href: string }[];
     theme: 'light' | 'dark';
     hoverColor: string;
-    logoClass?: string; // Optional class for sizing/object-fit tweaks if needed
+    logoClass?: string;
 }
 
 export default function BrandHeader({

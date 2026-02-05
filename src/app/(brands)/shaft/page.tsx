@@ -1,12 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, Clock, Facebook, Instagram, MapPin, Phone, Shield, Wind, Zap, MessageCircle, Play } from "lucide-react";
-import ProjectDropdown from "@/components/ProjectDropdown";
+import { Shield, Wind, Zap } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import ProductVideoModal from "@/components/ProductVideoModal";
-import ProductCard from "@/components/ProductCard";
 import BrandFooter from "@/components/BrandFooter";
 import BrandHeader from "@/components/BrandHeader";
 import BrandHero from "@/components/BrandHero";
@@ -46,8 +43,6 @@ export default function ShaftPage() {
                 theme="dark"
                 hoverColor="#e6ef5a"
             />
-
-            {/* Hero Section */}
             <BrandHero
                 theme="dark"
                 brandColor="#e6ef5a"
@@ -69,8 +64,6 @@ export default function ShaftPage() {
                     }
                 }}
             />
-
-            {/* Categories / Grid */}
             <BrandNewArrivals
                 theme="dark"
                 brandColor="#e6ef5a"
@@ -86,11 +79,8 @@ export default function ShaftPage() {
                 seeAllHref="/shaft/catalog"
                 onVideoClick={(url) => setVideoUrl(url)}
             />
-
-            {/* Technology / Features */}
             <section id="about" className="py-24 bg-black relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#e6ef5a] to-transparent opacity-50" />
-
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="relative">
                         <div className="absolute -inset-4 bg-[#e6ef5a] blur-[100px] opacity-20 rounded-full" />

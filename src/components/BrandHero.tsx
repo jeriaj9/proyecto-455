@@ -40,28 +40,21 @@ export default function BrandHero({
         ? "from-black via-black/80 to-transparent"
         : "from-white via-white/80 to-transparent";
 
-    // Text colors
     const descriptionClass = isDark ? "text-gray-400" : "text-gray-600";
     const subtitleGradient = isDark
         ? "from-white to-gray-400"
         : "from-black to-gray-500";
 
-    // Button 1 (View Collection) styles
-    // Dynamic styles for hover are handled via style prop or simple conditional classes if manageable.
-    // Since brandColor is dynamic, we use style prop for the main button color.
-
     return (
         <section className={`relative h-screen flex items-center justify-start overflow-hidden ${containerClass}`}>
-            {/* Abstract Background Elements */}
             <div
                 className="absolute top-0 right-0 w-3/4 h-full skew-x-12 transform translate-x-1/4"
                 style={{
-                    background: `linear-gradient(to left, ${brandColor}33, transparent)` // 33 = 20% opacity approx
+                    background: `linear-gradient(to left, ${brandColor}33, transparent)`
                 }}
             />
             <div className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t ${gradientOverlayClass} z-10`} />
 
-            {/* Background Media */}
             {backgroundMedia.type === 'image' ? (
                 <div
                     className="absolute inset-0 z-0 opacity-60 bg-cover bg-center"

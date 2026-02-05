@@ -13,7 +13,6 @@ export default function ProjectDropdown({ theme = "light" }: ProjectDropdownProp
     const [isOpen, setIsOpen] = useState(false);
     const { language, setLanguage, t } = useLanguage();
 
-    // Colors based on theme
     const buttonColor = theme === "dark" ? "text-white hover:bg-white/10" : "text-black hover:bg-black/10";
     const dropdownBg = "bg-white";
     const dropdownText = "text-slate-900";
@@ -44,7 +43,6 @@ export default function ProjectDropdown({ theme = "light" }: ProjectDropdownProp
                             <span className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.common.selectBrand}</span>
                         </div>
 
-                        {/* Language Switcher */}
                         <button
                             onClick={toggleLanguage}
                             className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 ${dropdownText}`}

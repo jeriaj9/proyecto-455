@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Template({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
 
-    // Determine brand synchronously from pathname to set initial state correctly
     const getBrand = (path: string): Brand | null => {
         if (path.startsWith("/shaft")) return "shaft";
         if (path.startsWith("/auto-services")) return "auto-services";
@@ -17,9 +16,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
     };
 
     const targetBrand = getBrand(pathname);
-
-    // If we are on a brand page, start in loading state.
-    // Since Template remounts on navigation, this effectively resets state on new route.
     const [loading, setLoading] = useState(!!targetBrand);
     const [currentBrand, setCurrentBrand] = useState<Brand | null>(targetBrand);
 
@@ -40,22 +36,15 @@ export default function Template({ children }: { children: React.ReactNode }) {
                 {loading && currentBrand && (
                     <motion.div
                         key="loader"
-                        initial={{ opacity: 1 }} // Start fully visible
+                        initial={{ opacity: 1 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[60]" // Ensure high z-index
+                        className="fixed inset-0 z-[60]"
                     >
                         <BrandLoader brand={currentBrand} />
                     </motion.div>
                 )}
             </AnimatePresence>
-
-            {/* Only show children when not loading? Or show them underneath? 
-                User said "cover the page completely... til animation end". 
-                Usually it's better to render children underneath so they are ready when loader fades. 
-                But if "page shows then loader appears", it means loader renders late.
-                Initializing state to true should fix this. 
-            */}
             <motion.div
                 key={pathname}
                 initial={{ opacity: 0, y: 10 }}

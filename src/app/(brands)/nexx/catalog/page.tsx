@@ -1,14 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, MessageCircle, Play, Video } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import ProductVideoModal from "@/components/ProductVideoModal";
 import ProductCard from "@/components/ProductCard";
-
-// Mock data removed
-
 
 export default function NexxCatalogPage() {
     const { t } = useLanguage();
@@ -47,7 +44,6 @@ export default function NexxCatalogPage() {
 
     return (
         <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
-            {/* Header */}
             <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-200 py-6 px-8">
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     <Link href="/nexx" className="group flex items-center text-gray-500 hover:text-black transition-colors text-sm font-bold uppercase tracking-widest">
@@ -63,7 +59,7 @@ export default function NexxCatalogPage() {
                         </span>
                     </div>
 
-                    <div className="w-20" /> {/* Spacer for visual balance */}
+                    <div className="w-20" />
                 </div>
             </header>
 
@@ -78,8 +74,6 @@ export default function NexxCatalogPage() {
                         </p>
                     </div>
                 </div>
-
-                {/* Filter Bar */}
                 {!loading && categories.length > 0 && (
                     <div className="mb-10 flex flex-wrap gap-4">
                         <button

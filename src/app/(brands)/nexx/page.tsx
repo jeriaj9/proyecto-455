@@ -1,12 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, Clock, Facebook, Instagram, MapPin, Phone, Shield, Wind, Zap, MessageCircle, Play } from "lucide-react";
-import ProjectDropdown from "@/components/ProjectDropdown";
+import { Shield, Wind, Zap } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import ProductVideoModal from "@/components/ProductVideoModal";
-import ProductCard from "@/components/ProductCard";
 import BrandFooter from "@/components/BrandFooter";
 import BrandHeader from "@/components/BrandHeader";
 import BrandHero from "@/components/BrandHero";
@@ -45,8 +42,6 @@ export default function NexxPage() {
                 theme="light"
                 hoverColor="#C54D3C"
             />
-
-            {/* Hero Section */}
             <BrandHero
                 theme="light"
                 brandColor="#C54D3C"
@@ -68,8 +63,6 @@ export default function NexxPage() {
                     }
                 }}
             />
-
-            {/* Categories / Grid */}
             <BrandNewArrivals
                 theme="light"
                 brandColor="#C54D3C"
@@ -85,11 +78,8 @@ export default function NexxPage() {
                 seeAllHref="/nexx/catalog"
                 onVideoClick={(url) => setVideoUrl(url)}
             />
-
-            {/* Technology / Features */}
             <section id="about" className="py-24 bg-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C54D3C] to-transparent opacity-50" />
-
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="relative">
                         <div className="absolute -inset-4 bg-[#C54D3C] blur-[100px] opacity-20 rounded-full" />

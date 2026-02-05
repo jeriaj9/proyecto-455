@@ -7,8 +7,8 @@ interface BrandFooterProps {
     logoSrc: string;
     description: string;
     instagramUrl: string;
-    facebookUrl?: string; // Optional, default #
-    brandName: string; // Used for copyright
+    facebookUrl?: string;
+    brandName: string;
 }
 
 export default function BrandFooter({

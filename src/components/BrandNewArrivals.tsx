@@ -5,7 +5,7 @@ import ProductCard from "@/components/ProductCard";
 interface BrandNewArrivalsProps {
     theme: 'light' | 'dark';
     brandColor: string;
-    products: any[]; // Ideally defined Product interface
+    products: any[];
     texts: {
         titlePrefix: string;
         titleHighlight: string;
@@ -30,11 +30,6 @@ export default function BrandNewArrivals({
 
     const bgClass = isDark ? "bg-zinc-950" : "bg-gray-50";
     const borderClass = isDark ? "border-gray-800" : "border-gray-200";
-    const titleClass = isDark ? "text-white" : "text-black"; // Implicit in parent text color usually, but safe to enforce or inherit.
-    // Actually standard text color is set on body/page level, but headers might need explicit.
-    // In Shaft (dark) text is white. In Nexx (light) text is black.
-    // The component below uses `text-4xl...` which inherits color.
-    // We should ensure the section sets the correct text color if not inherited.
 
     return (
         <section className={`py-24 ${bgClass} ${isDark ? 'text-white' : 'text-black'}`}>

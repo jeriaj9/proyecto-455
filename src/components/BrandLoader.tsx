@@ -20,7 +20,7 @@ export default function BrandLoader({ brand }: BrandLoaderProps) {
             case "auto-services":
                 return {
                     logo: "/images/455AutoServiceLogo.png",
-                    bg: "bg-slate-900", // Darker for loader to make white reveal pop or just dark context
+                    bg: "bg-slate-900",
                     width: "w-64"
                 };
             case "nexx":
@@ -43,14 +43,12 @@ export default function BrandLoader({ brand }: BrandLoaderProps) {
     return (
         <div className={`fixed inset-0 z-[60] flex items-center justify-center ${config.bg}`}>
             <div className={`relative ${config.width}`}>
-                {/* Monochrome Base */}
                 <img
                     src={config.logo}
                     alt={`${brand} loader`}
                     className="w-full h-auto object-contain grayscale opacity-30"
                 />
 
-                {/* Color Reveal Overlay */}
                 <motion.div
                     className="absolute inset-0 overflow-hidden"
                     initial={{ clipPath: "inset(0 100% 0 0)" }}

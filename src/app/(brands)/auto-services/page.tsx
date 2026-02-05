@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { Wrench, Disc, Thermometer, Car, Laptop, Filter, Phone, MapPin, Clock, Facebook, Instagram, MessageCircle, ArrowRight } from "lucide-react";
-import ProjectDropdown from "@/components/ProjectDropdown";
+import { Wrench, Disc, Thermometer, Car, Laptop, Filter } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import BrandFooter from "@/components/BrandFooter";
 import ServiceCard from "@/components/ServiceCard";
@@ -18,7 +16,6 @@ export default function AutoServicesPage() {
 
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
-            {/* Header */}
             <BrandHeader
                 logoSrc="/images/455AutoServiceLogo.png"
                 logoAlt="455 Auto Services"
@@ -31,7 +28,6 @@ export default function AutoServicesPage() {
                 hoverColor="#4E759C"
             />
 
-            {/* Hero Section */}
             <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-slate-900">
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <img
@@ -58,8 +54,6 @@ export default function AutoServicesPage() {
                     </div>
                 </div>
             </section>
-
-            {/* About Us */}
             <section id="about" className="py-24 bg-white">
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="relative">
@@ -93,8 +87,6 @@ export default function AutoServicesPage() {
                     </div>
                 </div>
             </section>
-
-            {/* Services Grid */}
             <section id="services" className="py-24 bg-slate-50 relative">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16 max-w-2xl mx-auto">
@@ -157,8 +149,6 @@ export default function AutoServicesPage() {
                     </div>
                 </div>
             </section>
-
-            {/* Footer */}
             <BrandFooter
                 logoSrc="/images/455AutoServiceLogo.jpeg"
                 description={t.autoServices.footerDesc}

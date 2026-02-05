@@ -1,15 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, MessageCircle, Play } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import ProductVideoModal from "@/components/ProductVideoModal";
 import ProductCard from "@/components/ProductCard";
-
-// Mock data for initial development
-// Mock data removed in favor of static JSON fetch
-
 
 export default function ShaftCatalogPage() {
     const { t } = useLanguage();
@@ -27,7 +23,6 @@ export default function ShaftCatalogPage() {
                     const data = await res.json();
                     setProducts(data);
 
-                    // Extract and normalize categories
                     const uniqueCategories = Array.from(new Set(data.map((p: any) => p.category?.trim()))).filter(Boolean) as string[];
                     setCategories(uniqueCategories.sort());
                 } else {
@@ -48,7 +43,6 @@ export default function ShaftCatalogPage() {
 
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-[#e6ef5a] selection:text-black">
-            {/* Header */}
             <header className="sticky top-0 z-30 bg-black/90 backdrop-blur-md border-b border-zinc-900 py-6 px-8">
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     <Link href="/shaft" className="group flex items-center text-gray-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">
@@ -62,7 +56,7 @@ export default function ShaftCatalogPage() {
                         </span>
                     </div>
 
-                    <div className="w-20" /> {/* Spacer for visual balance */}
+                    <div className="w-20" />
                 </div>
             </header>
 
@@ -77,8 +71,6 @@ export default function ShaftCatalogPage() {
                         </p>
                     </div>
                 </div>
-
-                {/* Filter Bar */}
                 {!loading && categories.length > 0 && (
                     <div className="mb-10 flex flex-wrap gap-4">
                         <button

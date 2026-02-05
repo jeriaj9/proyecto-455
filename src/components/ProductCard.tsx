@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRight, MessageCircle, Play } from "lucide-react";
 
 interface Product {
@@ -20,7 +19,7 @@ interface ProductCardProps {
         viewVideo: string;
     };
     onVideoClick: (url: string) => void;
-    showActions?: boolean; // Whether to show the bottom action buttons (Inquire/Video)
+    showActions?: boolean;
 }
 
 export default function ProductCard({
@@ -33,7 +32,6 @@ export default function ProductCard({
 }: ProductCardProps) {
     const isDark = theme === 'dark';
 
-    // Theme-based styles
     const containerClasses = isDark
         ? "bg-zinc-900 border-zinc-800"
         : "bg-white border-gray-200";
@@ -46,27 +44,6 @@ export default function ProductCard({
         ? "text-gray-400"
         : "text-gray-600";
 
-    // Dynamic hover border style is handled via inline style or could be a class if using specific colors
-    // Since brandColor is dynamic, we might need inline style for the specific color, 
-    // but Tailwind 4 arbitrary values or style prop works.
-    // However, for hover states with dynamic colors in Tailwind, it's tricky without arbitrary values generated at runtime or inline styles.
-    // Let's use a group-hover approach with a specific class if possible, or style prop.
-    // Given the previous code used `hover:border-[#Color]`, we can try to construct that if the color is standard, 
-    // or better, use standard CSS variable approach or just inline style for the border color on hover.
-    // EASIEST WAY: Use a style tag or just standard classes if we know the colors. 
-    // Shaft: #e6ef5a, Nexx: #C54D3C. 
-    // Let's stick to passing the color string and using it in style for border color on hover? 
-    // Actually, inline styles for hover are hard in React.
-    // Instead, let's use the `style` prop for the custom property and refer to it in Tailwind if possible, or just standard classes if the colors are fixed.
-    // But the requirement says "pass properties such as ... colors".
-    // Let's try to use style={{ '--brand-color': brandColor } as React.CSSProperties} and Tailwind's arbitrary values if supported, 
-    // or just plain Classes if we only have 2 brands. 
-    // For now, I will use the specific colors in the `style` prop for the border and buttons to match the exact request of "reusing it".
-
-    const cardStyle = {
-        borderColor: 'transparent', // Default state handled by class
-    } as React.CSSProperties;
-
     return (
         <div
             className={`group flex flex-col h-full ${containerClasses} border transition-colors duration-300 relative`}
@@ -74,13 +51,6 @@ export default function ProductCard({
                 '--brand-color': brandColor,
             } as React.CSSProperties}
         >
-            {/* Hover border effect using pseudo-element or direct style if possible. 
-                Tailwind v4 supports dynamic values? 
-                Let's emulate the original behavior: `hover:border-[#Color]`
-                We can use a style tag for the group hover or just inline style for the border color if we toggle it on hover (state).
-                But pure CSS is better. 
-                Let's use a dataset attribute or just scoped style.
-            */}
             <style jsx>{`
                 .group:hover {
                     border-color: ${brandColor} !important;
@@ -113,13 +83,6 @@ export default function ProductCard({
                                     ? 'bg-white text-black hover:bg-[var(--brand-color)] hover:text-black'
                                     : 'bg-black text-white hover:bg-[var(--brand-color)] hover:text-white'
                                 }`}
-                            // Note: Hover colors for text might need adjustment based on brand color brightness.
-                            // Shaft (Lime) -> Black text. Nexx (Red) -> White text? 
-                            // original Nexx: hover:text-white. original Shaft: hover:text-black.
-                            // We can pass a `hoverTextColor` prop or infer it.
-                            // For now, let's stick to the previous logic:
-                            // Shaft (Dark theme, Lime color) -> Hover Text Black.
-                            // Nexx (Light theme, Red color) -> Hover Text White.
                             style={{
                                 '--hover-bg': brandColor,
                             } as React.CSSProperties}

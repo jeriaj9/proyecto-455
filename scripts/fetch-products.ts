@@ -37,15 +37,14 @@ async function fetchGoogleSheet(sheetId: string, sheetName: string): Promise<Pro
             header: true,
             skipEmptyLines: true,
             complete: (results) => {
-                // Validate and map columns
                 const products: Product[] = results.data.map((row: any) => ({
-                    id: row.id || row.ID || '', // Handle varied casing
+                    id: row.id || row.ID || '',
                     name: row.name || row.Name || row.NAME || '',
                     description: row.description || row.Description || '',
                     category: row.category || row.Category || '',
                     image_url: row.image_url || row['image url'] || row.Image || '',
                     video_url: row.video_url || row['video url'] || row.Video || row.video || ''
-                })).filter(p => p.id && p.name); // Basic validation
+                })).filter(p => p.id && p.name);
 
                 resolve(products);
             },
@@ -64,17 +63,14 @@ async function main() {
     try {
         console.log('Starting product update...');
 
-        // Fetch Shaft
         const shaftProducts = await fetchGoogleSheet(SHAFT_SHEET_ID, SHAFT_SHEET_NAME);
         fs.writeFileSync(path.join(OUTPUT_DIR, 'shaft-products.json'), JSON.stringify(shaftProducts, null, 2));
         console.log(`Saved ${shaftProducts.length} Shaft products.`);
 
-        // Fetch Shaft Textile
         const shaftTextileProducts = await fetchGoogleSheet(SHAFT_TEXTILE_SHEET_ID, SHAFT_TEXTILE_SHEET_NAME);
         fs.writeFileSync(path.join(OUTPUT_DIR, 'shaft-textile-products.json'), JSON.stringify(shaftTextileProducts, null, 2));
         console.log(`Saved ${shaftTextileProducts.length} Shaft Textile products.`);
 
-        // Fetch Nexx
         const nexxProducts = await fetchGoogleSheet(NEXX_SHEET_ID, NEXX_SHEET_NAME);
         fs.writeFileSync(path.join(OUTPUT_DIR, 'nexx-products.json'), JSON.stringify(nexxProducts, null, 2));
         console.log(`Saved ${nexxProducts.length} Nexx products.`);
