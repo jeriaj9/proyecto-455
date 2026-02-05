@@ -1,12 +1,32 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Clock, Facebook, Instagram, MapPin, Phone, Shield, Wind, Zap } from "lucide-react";
+import { ArrowRight, Clock, Facebook, Instagram, MapPin, Phone, Shield, Wind, Zap, MessageCircle, Play } from "lucide-react";
 import ProjectDropdown from "@/components/ProjectDropdown";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
+import ProductVideoModal from "@/components/ProductVideoModal";
+import ProductCard from "@/components/ProductCard";
 
 export default function ShaftPage() {
     const { t } = useLanguage();
+    const [products, setProducts] = useState<any[]>([]);
+    const [videoUrl, setVideoUrl] = useState<string | null>(null);
+
+    useEffect(() => {
+        async function loadProducts() {
+            try {
+                const res = await fetch('/data/shaft-products.json');
+                if (res.ok) {
+                    const data = await res.json();
+                    setProducts(data);
+                }
+            } catch (error) {
+                console.error("Error loading products", error);
+            }
+        }
+        loadProducts();
+    }, []);
 
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-[#e6ef5a] selection:text-black">
@@ -78,21 +98,20 @@ export default function ShaftPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {[1, 2, 3].map((i) => (
-                            <div key={i} className="group relative h-[500px] bg-zinc-900 overflow-hidden border border-zinc-800 hover:border-[#e6ef5a] transition-colors">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10" />
-                                <img
-                                    src={'https://shafthelmets.com/wp-content/uploads/SHAFT-551-PUKEY.png'}
-                                    alt="Helmet"
-                                    className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        {products.slice(0, 3).map((product) => (
+                            <div key={product.id}>
+                                <ProductCard
+                                    product={product}
+                                    theme="dark"
+                                    brandColor="#e6ef5a"
+                                    texts={{
+                                        viewDetails: t.common.viewDetails,
+                                        inquireNow: t.common.inquireNow,
+                                        viewVideo: t.common.viewVideo
+                                    }}
+                                    onVideoClick={(url) => setVideoUrl(url)}
+                                    showActions={true}
                                 />
-                                <div className="absolute bottom-0 left-0 w-full p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                                    <h3 className="text-3xl font-black uppercase italic mb-2">Shaft PRO {500 + i * 10}</h3>
-                                    <p className="text-gray-400 mb-6 line-clamp-2">{t.shaft.safetyStandard}</p>
-                                    <span className="text-[#e6ef5a] font-bold uppercase tracking-wider text-sm flex items-center gap-2">
-                                        {t.common.viewDetails} <ArrowRight size={16} />
-                                    </span>
-                                </div>
                             </div>
                         ))}
                     </div>
@@ -171,7 +190,7 @@ export default function ShaftPage() {
                         <h4 className="font-bold uppercase mb-6 text-sm tracking-wider text-white">Newsletter</h4>
                         <div className="flex bg-zinc-900 border border-zinc-800 p-1">
                             <input type="email" placeholder="EMAIL ADDRESS" className="bg-transparent px-4 py-2 w-full text-sm focus:outline-none text-white placeholder-zinc-600" />
-                            <button className="bg-[#C54D3C] text-white px-4 py-2 font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">
+                            <button className="bg-[#e6ef5a] text-black px-4 py-2 font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">
                                 Join
                             </button>
                         </div>
@@ -243,6 +262,12 @@ export default function ShaftPage() {
                     <p>&copy; 2026 Auto Servicios 455. All rights reserved.</p>
                 </div>
             </footer>
+
+            <ProductVideoModal
+                isOpen={!!videoUrl}
+                onClose={() => setVideoUrl(null)}
+                videoUrl={videoUrl || ""}
+            />
         </div>
     );
 }

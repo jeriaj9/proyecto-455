@@ -1,12 +1,32 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Clock, Facebook, Instagram, MapPin, Phone, Shield, Wind, Zap } from "lucide-react";
+import { ArrowRight, Clock, Facebook, Instagram, MapPin, Phone, Shield, Wind, Zap, MessageCircle, Play } from "lucide-react";
 import ProjectDropdown from "@/components/ProjectDropdown";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
+import ProductVideoModal from "@/components/ProductVideoModal";
+import ProductCard from "@/components/ProductCard";
 
 export default function NexxPage() {
     const { t } = useLanguage();
+    const [products, setProducts] = useState<any[]>([]);
+    const [videoUrl, setVideoUrl] = useState<string | null>(null);
+
+    useEffect(() => {
+        async function loadProducts() {
+            try {
+                const res = await fetch('/data/nexx-products.json');
+                if (res.ok) {
+                    const data = await res.json();
+                    setProducts(data);
+                }
+            } catch (error) {
+                console.error("Error loading products", error);
+            }
+        }
+        loadProducts();
+    }, []);
 
     return (
         <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
@@ -75,21 +95,20 @@ export default function NexxPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {[1, 2, 3].map((i) => (
-                            <div key={i} className="group relative h-[500px] bg-white overflow-hidden border border-gray-200 hover:border-[#C54D3C] transition-colors">
-                                <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/40 to-transparent z-10" />
-                                <img
-                                    src={'https://nexx-helmets.com/wp-content/uploads/2025/10/XRALLY_RAID_BLUE_RED_SIDE-300x300.png'}
-                                    alt="Helmet"
-                                    className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        {products.slice(0, 3).map((product) => (
+                            <div key={product.id}>
+                                <ProductCard
+                                    product={product}
+                                    theme="light"
+                                    brandColor="#C54D3C"
+                                    texts={{
+                                        viewDetails: t.common.viewDetails,
+                                        inquireNow: t.common.inquireNow,
+                                        viewVideo: t.common.viewVideo
+                                    }}
+                                    onVideoClick={(url) => setVideoUrl(url)}
+                                    showActions={true}
                                 />
-                                <div className="absolute bottom-0 left-0 w-full p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                                    <h3 className="text-3xl font-black uppercase italic mb-2">Nexx X.WED {i + 2}</h3>
-                                    <p className="text-gray-600 mb-6 line-clamp-2">Carbon fiber shell with X-Matrix 2 technology. Ultimate adventure versatility.</p>
-                                    <span className="text-[#C54D3C] font-bold uppercase tracking-wider text-sm flex items-center gap-2">
-                                        View Details <ArrowRight size={16} />
-                                    </span>
-                                </div>
                             </div>
                         ))}
                     </div>
@@ -242,6 +261,12 @@ export default function NexxPage() {
                     <p>&copy; 2026 Nexx Helmets. All rights reserved.</p>
                 </div>
             </footer>
+
+            <ProductVideoModal
+                isOpen={!!videoUrl}
+                onClose={() => setVideoUrl(null)}
+                videoUrl={videoUrl || ""}
+            />
         </div>
     );
 }

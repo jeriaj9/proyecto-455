@@ -5,6 +5,7 @@ import { ArrowLeft, MessageCircle, Play } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import ProductVideoModal from "@/components/ProductVideoModal";
+import ProductCard from "@/components/ProductCard";
 
 // Mock data for initial development
 // Mock data removed in favor of static JSON fetch
@@ -111,41 +112,19 @@ export default function ShaftCatalogPage() {
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredProducts.map((product) => (
-                            <div key={product.id} className="group bg-zinc-900 border border-zinc-800 hover:border-[#e6ef5a] transition-all duration-300 flex flex-col">
-                                <div className="aspect-square relative overflow-hidden bg-zinc-950">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                        src={product.image_url}
-                                        alt={product.name}
-                                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                                    />
-                                </div>
-
-                                <div className="p-8 flex-1 flex flex-col items-start">
-                                    <div className="text-xs font-bold text-[#e6ef5a] uppercase tracking-widest mb-1">{product.category}</div>
-                                    <h3 className="text-2xl font-black uppercase italic text-white mb-2">{product.name}</h3>
-                                    <p className="text-gray-500 text-sm mb-6 leading-relaxed flex-1">{product.description}</p>
-
-                                    <a
-                                        href={`https://wa.me/18298851616?text=Hello Shaft Dominicana, I'm interested in the ${product.name}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-[#e6ef5a] hover:text-black font-black uppercase tracking-widest py-4 px-6 transition-all clip-path-slant"
-                                    >
-                                        <MessageCircle size={18} />
-                                        {t.common.inquireNow}
-                                    </a>
-
-                                    {product.video_url && (
-                                        <button
-                                            onClick={() => setVideoUrl(product.video_url)}
-                                            className="w-full mt-3 flex items-center justify-center gap-2 border border-white text-white hover:bg-white hover:text-black font-bold uppercase tracking-widest py-3 px-6 transition-all"
-                                        >
-                                            <Play size={16} fill="currentColor" />
-                                            {t.common.viewVideo}
-                                        </button>
-                                    )}
-                                </div>
+                            <div key={product.id}>
+                                <ProductCard
+                                    product={product}
+                                    theme="dark"
+                                    brandColor="#e6ef5a"
+                                    texts={{
+                                        viewDetails: t.common.viewDetails,
+                                        inquireNow: t.common.inquireNow,
+                                        viewVideo: t.common.viewVideo
+                                    }}
+                                    onVideoClick={(url) => setVideoUrl(url)}
+                                    showActions={true}
+                                />
                             </div>
                         ))}
                     </div>
