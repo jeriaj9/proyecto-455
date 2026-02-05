@@ -5,6 +5,7 @@ import { Wrench, Disc, Thermometer, Car, Laptop, Filter, Phone, MapPin, Clock, F
 import ProjectDropdown from "@/components/ProjectDropdown";
 import { useLanguage } from "@/contexts/LanguageContext";
 import BrandFooter from "@/components/BrandFooter";
+import ServiceCard from "@/components/ServiceCard";
 
 export default function AutoServicesPage() {
     const { t } = useLanguage();
@@ -105,102 +106,53 @@ export default function AutoServicesPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Service Item */}
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
-                            <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
-                                <Car size={32} />
-                            </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.oilChange}</h3>
-                            <p className="text-slate-500 mb-6">{t.autoServices.oilDesc}</p>
-                            <a
-                                href={getWhatsAppLink(t.autoServices.oilChange)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
-                            >
-                                {t.common.requestInfo} <ArrowRight size={16} />
-                            </a>
-                        </div>
+                        <ServiceCard
+                            icon={Car}
+                            title={t.autoServices.oilChange}
+                            description={t.autoServices.oilDesc}
+                            linkHref={getWhatsAppLink(t.autoServices.oilChange)}
+                            linkText={t.common.requestInfo}
+                        />
 
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
-                            <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
-                                <Thermometer size={32} />
-                            </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.acRepair}</h3>
-                            <p className="text-slate-500 mb-6">{t.autoServices.acDesc}</p>
-                            <a
-                                href={getWhatsAppLink(t.autoServices.acRepair)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
-                            >
-                                {t.common.requestInfo} <ArrowRight size={16} />
-                            </a>
-                        </div>
+                        <ServiceCard
+                            icon={Thermometer}
+                            title={t.autoServices.acRepair}
+                            description={t.autoServices.acDesc}
+                            linkHref={getWhatsAppLink(t.autoServices.acRepair)}
+                            linkText={t.common.requestInfo}
+                        />
 
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
-                            <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
-                                <Disc size={32} />
-                            </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.brakeBands}</h3>
-                            <p className="text-slate-500 mb-6">{t.autoServices.brakeDesc}</p>
-                            <a
-                                href={getWhatsAppLink(t.autoServices.brakeBands)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
-                            >
-                                {t.common.requestInfo} <ArrowRight size={16} />
-                            </a>
-                        </div>
+                        <ServiceCard
+                            icon={Disc}
+                            title={t.autoServices.brakeBands}
+                            description={t.autoServices.brakeDesc}
+                            linkHref={getWhatsAppLink(t.autoServices.brakeBands)}
+                            linkText={t.common.requestInfo}
+                        />
 
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
-                            <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
-                                <Wrench size={32} />
-                            </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.accessories}</h3>
-                            <p className="text-slate-500 mb-6">{t.autoServices.accessoriesDesc}</p>
-                            <a
-                                href={getWhatsAppLink(t.autoServices.accessories)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
-                            >
-                                {t.common.requestInfo} <ArrowRight size={16} />
-                            </a>
-                        </div>
+                        <ServiceCard
+                            icon={Wrench}
+                            title={t.autoServices.accessories}
+                            description={t.autoServices.accessoriesDesc}
+                            linkHref={getWhatsAppLink(t.autoServices.accessories)}
+                            linkText={t.common.requestInfo}
+                        />
 
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
-                            <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
-                                <Laptop size={32} />
-                            </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.diagnostics}</h3>
-                            <p className="text-slate-500 mb-6">{t.autoServices.diagnosticsDesc}</p>
-                            <a
-                                href={getWhatsAppLink(t.autoServices.diagnostics)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
-                            >
-                                {t.common.requestInfo} <ArrowRight size={16} />
-                            </a>
-                        </div>
+                        <ServiceCard
+                            icon={Laptop}
+                            title={t.autoServices.diagnostics}
+                            description={t.autoServices.diagnosticsDesc}
+                            linkHref={getWhatsAppLink(t.autoServices.diagnostics)}
+                            linkText={t.common.requestInfo}
+                        />
 
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#A6C5E1] transition-all group">
-                            <div className="w-14 h-14 bg-[#A6C5E1]/20 rounded-lg flex items-center justify-center text-[#4E759C] mb-6 group-hover:bg-[#4E759C] group-hover:text-white transition-colors">
-                                <Filter size={32} />
-                            </div>
-                            <h3 className="text-xl font-black uppercase italic text-slate-800 mb-3">{t.autoServices.preventive}</h3>
-                            <p className="text-slate-500 mb-6">{t.autoServices.preventiveDesc}</p>
-                            <a
-                                href={getWhatsAppLink(t.autoServices.preventive)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-sm font-bold uppercase text-[#4E759C] hover:text-[#2c4e70] transition-colors"
-                            >
-                                {t.common.requestInfo} <ArrowRight size={16} />
-                            </a>
-                        </div>
+                        <ServiceCard
+                            icon={Filter}
+                            title={t.autoServices.preventive}
+                            description={t.autoServices.preventiveDesc}
+                            linkHref={getWhatsAppLink(t.autoServices.preventive)}
+                            linkText={t.common.requestInfo}
+                        />
                     </div>
                 </div>
             </section>
