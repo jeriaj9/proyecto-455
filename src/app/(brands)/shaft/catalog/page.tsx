@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, MessageCircle } from "lucide-react";
+import { ArrowLeft, MessageCircle, Play } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
+import ProductVideoModal from "@/components/ProductVideoModal";
 
 // Mock data for initial development
 // Mock data removed in favor of static JSON fetch
@@ -15,6 +16,7 @@ export default function ShaftCatalogPage() {
     const [loading, setLoading] = useState(true);
     const [categories, setCategories] = useState<string[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
+    const [videoUrl, setVideoUrl] = useState<string | null>(null);
 
     useEffect(() => {
         async function loadProducts() {
@@ -81,8 +83,8 @@ export default function ShaftCatalogPage() {
                         <button
                             onClick={() => setSelectedCategory('all')}
                             className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all border ${selectedCategory === 'all'
-                                    ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
-                                    : 'bg-transparent border-zinc-800 text-gray-400 hover:border-white hover:text-white'
+                                ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
+                                : 'bg-transparent border-zinc-800 text-gray-400 hover:border-white hover:text-white'
                                 }`}
                         >
                             {t.common.all}
@@ -92,8 +94,8 @@ export default function ShaftCatalogPage() {
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
                                 className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all border ${selectedCategory === cat
-                                        ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
-                                        : 'bg-transparent border-zinc-800 text-gray-400 hover:border-white hover:text-white'
+                                    ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
+                                    : 'bg-transparent border-zinc-800 text-gray-400 hover:border-white hover:text-white'
                                     }`}
                             >
                                 {cat}
@@ -133,12 +135,28 @@ export default function ShaftCatalogPage() {
                                         <MessageCircle size={18} />
                                         {t.common.inquireNow}
                                     </a>
+
+                                    {product.video_url && (
+                                        <button
+                                            onClick={() => setVideoUrl(product.video_url)}
+                                            className="w-full mt-3 flex items-center justify-center gap-2 border border-white text-white hover:bg-white hover:text-black font-bold uppercase tracking-widest py-3 px-6 transition-all"
+                                        >
+                                            <Play size={16} fill="currentColor" />
+                                            {t.common.viewVideo}
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         ))}
                     </div>
                 )}
             </main>
+
+            <ProductVideoModal
+                isOpen={!!videoUrl}
+                onClose={() => setVideoUrl(null)}
+                videoUrl={videoUrl || ""}
+            />
 
             <footer className="py-8 text-center text-zinc-800 text-xs uppercase tracking-widest">
                 Shaft Dominicana {t.common.catalogFooter} &copy; 2026

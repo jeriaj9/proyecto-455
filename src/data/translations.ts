@@ -22,6 +22,7 @@ export const translations = {
             new: "Nuevo",
             catalogFooter: "Catálogo",
             requestInfo: "Solicitar Info",
+            viewVideo: "Ver Video",
         },
         shaft: {
             helmets: "Cascos",
@@ -111,6 +112,7 @@ export const translations = {
             new: "New",
             catalogFooter: "Catalog",
             requestInfo: "Request Info",
+            viewVideo: "View Video",
         },
         shaft: {
             helmets: "Helmets",

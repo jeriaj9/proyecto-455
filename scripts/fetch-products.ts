@@ -16,6 +16,7 @@ interface Product {
     description: string;
     category: string;
     image_url: string;
+    video_url: string;
 }
 
 async function fetchGoogleSheet(sheetId: string, sheetName: string): Promise<Product[]> {
@@ -40,7 +41,8 @@ async function fetchGoogleSheet(sheetId: string, sheetName: string): Promise<Pro
                     name: row.name || row.Name || row.NAME || '',
                     description: row.description || row.Description || '',
                     category: row.category || row.Category || '',
-                    image_url: row.image_url || row['image url'] || row.Image || ''
+                    image_url: row.image_url || row['image url'] || row.Image || '',
+                    video_url: row.video_url || row['video url'] || row.Video || row.video || ''
                 })).filter(p => p.id && p.name); // Basic validation
 
                 resolve(products);

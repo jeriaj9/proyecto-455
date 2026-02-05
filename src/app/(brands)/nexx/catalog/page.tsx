@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, MessageCircle } from "lucide-react";
+import { ArrowLeft, MessageCircle, Play, Video } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
+import ProductVideoModal from "@/components/ProductVideoModal";
 
 // Mock data removed
 
@@ -14,6 +15,7 @@ export default function NexxCatalogPage() {
     const [loading, setLoading] = useState(true);
     const [categories, setCategories] = useState<string[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
+    const [videoUrl, setVideoUrl] = useState<string | null>(null);
 
     useEffect(() => {
         async function loadProducts() {
@@ -82,8 +84,8 @@ export default function NexxCatalogPage() {
                         <button
                             onClick={() => setSelectedCategory('all')}
                             className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all border ${selectedCategory === 'all'
-                                    ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
-                                    : 'bg-transparent border-gray-300 text-gray-500 hover:border-black hover:text-black'
+                                ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
+                                : 'bg-transparent border-gray-300 text-gray-500 hover:border-black hover:text-black'
                                 }`}
                         >
                             {t.common.all}
@@ -93,8 +95,8 @@ export default function NexxCatalogPage() {
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
                                 className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all border ${selectedCategory === cat
-                                        ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
-                                        : 'bg-transparent border-gray-300 text-gray-500 hover:border-black hover:text-black'
+                                    ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
+                                    : 'bg-transparent border-gray-300 text-gray-500 hover:border-black hover:text-black'
                                     }`}
                             >
                                 {cat}
@@ -134,12 +136,28 @@ export default function NexxCatalogPage() {
                                         <MessageCircle size={18} />
                                         {t.common.inquireNow}
                                     </a>
+
+                                    {product.video_url && (
+                                        <button
+                                            onClick={() => setVideoUrl(product.video_url)}
+                                            className="w-full mt-3 flex items-center justify-center gap-2 border border-black text-black hover:bg-black hover:text-white font-bold uppercase tracking-widest py-3 px-6 transition-all"
+                                        >
+                                            <Play size={16} fill="currentColor" />
+                                            {t.common.viewVideo}
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         ))}
                     </div>
                 )}
             </main>
+
+            <ProductVideoModal
+                isOpen={!!videoUrl}
+                onClose={() => setVideoUrl(null)}
+                videoUrl={videoUrl || ""}
+            />
 
             <footer className="py-8 text-center text-gray-500 text-xs uppercase tracking-widest">
                 Nexx Helmets {t.common.catalogFooter} &copy; 2026
