@@ -19,7 +19,7 @@ export default function BrandLoader({ brand }: BrandLoaderProps) {
                 };
             case "auto-services":
                 return {
-                    logo: "/images/455AutoServicesLogo.jpg",
+                    logo: "/images/455AutoServiceLogo.png",
                     bg: "bg-slate-900", // Darker for loader to make white reveal pop or just dark context
                     width: "w-64"
                 };

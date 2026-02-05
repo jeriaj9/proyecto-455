@@ -19,7 +19,7 @@ export default function AutoServicesPage() {
             {/* Header */}
             <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-black/90 bg-white/90 backdrop-blur-md transition-all">
                 <div className="relative group cursor-pointer w-32 h-12 flex items-center">
-                    <img src="/images/455AutoServicesLogo.jpg" alt="455 Auto Services" className="w-32 h-12 object-contain" />
+                    <img src="/images/455AutoServiceLogo.png" alt="455 Auto Services" className="w-32 h-12 object-contain" />
                 </div>
                 <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest">
                     <Link href="#services" className="hover:text-[#4E759C] transition-colors">{t.common.services}</Link>
@@ -63,7 +63,7 @@ export default function AutoServicesPage() {
                     <div className="relative">
                         <div className="absolute -inset-4 bg-[#A6C5E1] rounded-xl transform -rotate-2" />
                         <img
-                            src="https://instagram.fsdq1-2.fna.fbcdn.net/v/t39.30808-6/449785137_17918166788939146_1836767684387046958_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=MzQwNDg2MjkxNjI0NTgxNjU0Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTA4MC5zZHIuQzMifQ%3D%3D&_nc_ohc=24l2rUbfzx8Q7kNvwGlpmg7&_nc_oc=AdmbrNcS5_UcFVmA9iFclYRiVX3QFTsOcm83UxwqK499zSQilQrVIM2WadzZ9rGxJYA&_nc_ad=z-m&_nc_cid=1367&_nc_zt=23&_nc_ht=instagram.fsdq1-2.fna&_nc_gid=OzSSrruFF-nASv8U3bFGDA&oh=00_AfosSH7_ylUMZsfSrNgtsJ93GR9ezSEmTgq4vdkDVfc1IA&oe=69830439"
+                            src="/images/455ManWorking.jpg"
                             alt="Mechanic at work"
                             className="relative rounded-xl shadow-2xl"
                         />
@@ -207,7 +207,7 @@ export default function AutoServicesPage() {
 
             {/* Footer */}
             <BrandFooter
-                logoSrc="/images/455AutoServicesLogo.jpg"
+                logoSrc="/images/455AutoServiceLogo.jpeg"
                 description={t.autoServices.footerDesc}
                 instagramUrl="https://www.instagram.com/autoservicios455/"
                 brandName="Auto Servicios 455"
