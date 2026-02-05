@@ -33,7 +33,7 @@ export default function AutoServicesPage() {
             <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-slate-900">
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <img
-                    src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                    src="/images/455AutoServiceHero.avif"
                     alt="Auto Shop Background"
                     className="absolute inset-0 w-full h-full object-cover"
                 />

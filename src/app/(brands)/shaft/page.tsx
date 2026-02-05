@@ -54,7 +54,7 @@ export default function ShaftPage() {
                 <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
 
                 {/* Placeholder for Hero Image - Ideally an aggressive rider shot */}
-                <div className="absolute inset-0 z-0 opacity-60 bg-[url('https://shafthelmets.com/wp-content/uploads/1-ABSORCION-DE-IMPACTO.gif')] bg-cover bg-center" />
+                <div className="absolute inset-0 z-0 opacity-60 bg-[url('/images/ShaftHero.gif')] bg-cover bg-center" />
 
                 <div className="relative z-20 px-8 md:px-24 w-full md:w-2/3 space-y-6">
                     <div className="inline-block bg-[#e6ef5a] text-black font-black uppercase text-xs px-3 py-1 mb-2 tracking-widest">
@@ -123,7 +123,7 @@ export default function ShaftPage() {
                     <div className="relative">
                         <div className="absolute -inset-4 bg-[#e6ef5a] blur-[100px] opacity-20 rounded-full" />
                         <img
-                            src="https://shafthelmets.com/wp-content/uploads/4-EVALUACION.gif"
+                            src="/images/ShaftTechnology.gif"
                             alt="Technology"
                             className="relative z-10 border-2 border-zinc-800 bg-zinc-900 p-2"
                         />

@@ -52,7 +52,7 @@ export default function NexxPage() {
                 {/* Placeholder for Hero Image */}
                 {/* <div className="absolute inset-0 z-0 opacity-60 bg-[url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center" /> */}
                 <video className="absolute inset-0 z-0 opacity-60" autoPlay playsInline loop muted poster="">
-                    <source src="https://nexx-helmets.com/wp-content/uploads/2025/10/TECH_RALLY.mp4" type="video/mp4" />
+                    <source src="/images/NexxHero.mp4" type="video/mp4" />
                 </video>
 
                 <div className="relative z-20 px-8 md:px-24 w-full md:w-2/3 space-y-6">
@@ -122,7 +122,7 @@ export default function NexxPage() {
                     <div className="relative">
                         <div className="absolute -inset-4 bg-[#C54D3C] blur-[100px] opacity-20 rounded-full" />
                         <img
-                            src="https://nexx-helmets.com/wp-content/uploads/sb-instagram-feed-images/612336352_1334536158711011_5161154648921028489_nfull.webp"
+                            src="/images/NexxTechnology.webp"
                             alt="Technology"
                             className="relative z-10 border-2 border-zinc-800 bg-zinc-900 p-2"
                         />
