@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import ProductVideoModal from "@/components/ProductVideoModal";
 import ProductCard from "@/components/ProductCard";
 import BrandFooter from "@/components/BrandFooter";
+import BrandHeader from "@/components/BrandHeader";
 
 export default function ShaftPage() {
     const { t } = useLanguage();
@@ -31,21 +32,18 @@ export default function ShaftPage() {
 
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-[#e6ef5a] selection:text-black">
-            <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-white/90 bg-black/60 backdrop-blur-md transition-all">
-                <div className="relative group cursor-pointer w-32 h-12 flex items-center">
-                    <img
-                        src="/images/ShaftLogo.png"
-                        alt="Shaft Dominicana"
-                    />
-                </div>
-                <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest">
-                    <Link href="#helmets" className="hover:text-[#e6ef5a] transition-colors">{t.shaft.helmets}</Link>
-                    <Link href="#about" className="hover:text-[#e6ef5a] transition-colors">{t.shaft.technology}</Link>
-                    <Link href="/shaft/catalog" className="hover:text-[#e6ef5a] transition-colors">{t.common.catalog}</Link>
-                    <Link href="/shaft/textile-catalog" className="hover:text-[#e6ef5a] transition-colors">{t.common.textileCatalog}</Link>
-                </div>
-                <ProjectDropdown theme="dark" />
-            </nav>
+            <BrandHeader
+                logoSrc="/images/ShaftLogo.png"
+                logoAlt="Shaft Dominicana"
+                links={[
+                    { label: t.shaft.helmets, href: "#helmets" },
+                    { label: t.shaft.technology, href: "#about" },
+                    { label: t.common.catalog, href: "/shaft/catalog" },
+                    { label: t.common.textileCatalog, href: "/shaft/textile-catalog" },
+                ]}
+                theme="dark"
+                hoverColor="#e6ef5a"
+            />
 
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-start bg-black overflow-hidden">

@@ -6,6 +6,7 @@ import ProjectDropdown from "@/components/ProjectDropdown";
 import { useLanguage } from "@/contexts/LanguageContext";
 import BrandFooter from "@/components/BrandFooter";
 import ServiceCard from "@/components/ServiceCard";
+import BrandHeader from "@/components/BrandHeader";
 
 export default function AutoServicesPage() {
     const { t } = useLanguage();
@@ -18,17 +19,17 @@ export default function AutoServicesPage() {
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
             {/* Header */}
-            <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-black/90 bg-white/90 backdrop-blur-md transition-all">
-                <div className="relative group cursor-pointer w-32 h-12 flex items-center">
-                    <img src="/images/455AutoServiceLogo.png" alt="455 Auto Services" className="w-32 h-12 object-contain" />
-                </div>
-                <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest">
-                    <Link href="#services" className="hover:text-[#4E759C] transition-colors">{t.common.services}</Link>
-                    <Link href="#about" className="hover:text-[#4E759C] transition-colors">{t.common.aboutUs}</Link>
-                    <Link href="#contact" className="hover:text-[#4E759C] transition-colors">{t.common.contact}</Link>
-                </div>
-                <ProjectDropdown theme="light" />
-            </nav>
+            <BrandHeader
+                logoSrc="/images/455AutoServiceLogo.png"
+                logoAlt="455 Auto Services"
+                links={[
+                    { label: t.common.services, href: "#services" },
+                    { label: t.common.aboutUs, href: "#about" },
+                    { label: t.common.contact, href: "#contact" },
+                ]}
+                theme="light"
+                hoverColor="#4E759C"
+            />
 
             {/* Hero Section */}
             <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-slate-900">

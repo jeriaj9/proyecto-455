@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import ProductVideoModal from "@/components/ProductVideoModal";
 import ProductCard from "@/components/ProductCard";
 import BrandFooter from "@/components/BrandFooter";
+import BrandHeader from "@/components/BrandHeader";
 
 export default function NexxPage() {
     const { t } = useLanguage();
@@ -31,17 +32,17 @@ export default function NexxPage() {
 
     return (
         <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
-            <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-black/90 bg-white/90 backdrop-blur-md transition-all">
-                <div className="relative group cursor-pointer w-32 h-12 flex items-center">
-                    <img src="/images/nexxLogo.svg" alt="Nexx Helmets" className="w-32 h-12 object-contain" />
-                </div>
-                <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest">
-                    <Link href="#helmets" className="hover:text-[#C54D3C] transition-colors">{t.nexx.helmets}</Link>
-                    <Link href="#about" className="hover:text-[#C54D3C] transition-colors">{t.nexx.safety}</Link>
-                    <Link href="/nexx/catalog" className="hover:text-[#C54D3C] transition-colors">{t.common.catalog}</Link>
-                </div>
-                <ProjectDropdown theme="light" />
-            </nav>
+            <BrandHeader
+                logoSrc="/images/nexxLogo.svg"
+                logoAlt="Nexx Helmets"
+                links={[
+                    { label: t.nexx.helmets, href: "#helmets" },
+                    { label: t.nexx.safety, href: "#about" },
+                    { label: t.common.catalog, href: "/nexx/catalog" },
+                ]}
+                theme="light"
+                hoverColor="#C54D3C"
+            />
 
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-start bg-white overflow-hidden">
