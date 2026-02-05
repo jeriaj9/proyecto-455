@@ -31,10 +31,8 @@ export default function NexxPage() {
 
     return (
         <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
-            {/* Navigation (Fixed) */}
             <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-black/90 bg-white/90 backdrop-blur-md transition-all">
                 <div className="relative group cursor-pointer w-32 h-12 flex items-center">
-                    {/* Logo Image Placeholder */}
                     <img src="/images/nexxLogo.svg" alt="Nexx Helmets" className="w-32 h-12 object-contain" />
                 </div>
                 <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest">

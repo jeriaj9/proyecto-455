@@ -31,16 +31,11 @@ export default function ShaftPage() {
 
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-[#e6ef5a] selection:text-black">
-            {/* Navigation (Fixed) */}
             <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center text-white/90 bg-black/60 backdrop-blur-md transition-all">
                 <div className="relative group cursor-pointer w-32 h-12 flex items-center">
-                    {/* Logo Image */}
                     <img
                         src="/images/ShaftLogo.png"
                         alt="Shaft Dominicana"
-                    // className="h-full w-auto object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300" // Invert for white logo on black, color on hover? Or just white. 
-                    // Actually user said replace it. Assuming it's a normal logo. Brightness 0 invert makes it white if it was black. 
-                    // Let's assume user wants white on the dark theme.
                     />
                 </div>
                 <div className="hidden md:flex gap-8 font-bold uppercase text-sm tracking-widest">
