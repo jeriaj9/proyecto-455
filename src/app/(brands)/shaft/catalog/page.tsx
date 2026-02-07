@@ -64,10 +64,11 @@ export default function ShaftCatalogPage() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                     <div>
                         <h1 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-4">
-                            {t.common.theCollection}
+                            {t.common.the} <span style={{ color: '#e6ef5a' }}>{t.common.Collection}</span>
+
                         </h1>
                         <p className="text-gray-400 max-w-xl">
-                            Explore our range of certified helmets designed for safety, comfort, and speed.
+                            {t.shaft.helmetsCatalog}
                         </p>
                     </div>
                 </div>
