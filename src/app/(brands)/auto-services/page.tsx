@@ -76,11 +76,11 @@ export default function AutoServicesPage() {
                         </p>
                         <div className="flex gap-8 pt-4">
                             <div>
-                                <h3 className="text-3xl font-black text-[#4E759C]">15+</h3>
+                                <h3 className="text-3xl font-black text-[#4E759C]">3+</h3>
                                 <p className="text-sm font-bold uppercase text-slate-400">{t.autoServices.yearsExp}</p>
                             </div>
                             <div>
-                                <h3 className="text-3xl font-black text-[#4E759C]">5k+</h3>
+                                <h3 className="text-3xl font-black text-[#4E759C]">2.5k+</h3>
                                 <p className="text-sm font-bold uppercase text-slate-400">{t.autoServices.happyClients}</p>
                             </div>
                         </div>
@@ -106,7 +106,6 @@ export default function AutoServicesPage() {
                             linkHref={getWhatsAppLink(t.autoServices.oilChange)}
                             linkText={t.common.requestInfo}
                         />
-
                         <ServiceCard
                             icon={Thermometer}
                             title={t.autoServices.acRepair}
@@ -114,7 +113,6 @@ export default function AutoServicesPage() {
                             linkHref={getWhatsAppLink(t.autoServices.acRepair)}
                             linkText={t.common.requestInfo}
                         />
-
                         <ServiceCard
                             icon={Disc}
                             title={t.autoServices.brakeBands}
@@ -122,7 +120,6 @@ export default function AutoServicesPage() {
                             linkHref={getWhatsAppLink(t.autoServices.brakeBands)}
                             linkText={t.common.requestInfo}
                         />
-
                         <ServiceCard
                             icon={Wrench}
                             title={t.autoServices.accessories}
@@ -130,7 +127,6 @@ export default function AutoServicesPage() {
                             linkHref={getWhatsAppLink(t.autoServices.accessories)}
                             linkText={t.common.requestInfo}
                         />
-
                         <ServiceCard
                             icon={Laptop}
                             title={t.autoServices.diagnostics}
@@ -138,12 +134,18 @@ export default function AutoServicesPage() {
                             linkHref={getWhatsAppLink(t.autoServices.diagnostics)}
                             linkText={t.common.requestInfo}
                         />
-
                         <ServiceCard
                             icon={Filter}
                             title={t.autoServices.preventive}
                             description={t.autoServices.preventiveDesc}
                             linkHref={getWhatsAppLink(t.autoServices.preventive)}
+                            linkText={t.common.requestInfo}
+                        />
+                        <ServiceCard
+                            icon={Filter}
+                            title={t.autoServices.crystalTint}
+                            description={t.autoServices.crystalTintDesc}
+                            linkHref={getWhatsAppLink(t.autoServices.crystalTint)}
                             linkText={t.common.requestInfo}
                         />
                     </div>
