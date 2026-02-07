@@ -46,6 +46,7 @@ export default function ShaftPage() {
             <BrandHero
                 theme="dark"
                 brandColor="#e6ef5a"
+                textColor="black"
                 backgroundMedia={{
                     type: 'image',
                     src: '/images/ShaftHero.gif'

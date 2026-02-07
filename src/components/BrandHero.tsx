@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 interface BrandHeroProps {
     theme: 'light' | 'dark';
     brandColor: string;
+    textColor: string;
     backgroundMedia: {
         type: 'image' | 'video';
         src: string;
@@ -26,6 +27,7 @@ interface BrandHeroProps {
 export default function BrandHero({
     theme,
     brandColor,
+    textColor,
     backgroundMedia,
     badgeText,
     title,
@@ -69,7 +71,7 @@ export default function BrandHero({
             <div className="relative z-20 px-8 md:px-24 w-full md:w-2/3 space-y-6">
                 <div
                     className="inline-block text-black font-black uppercase text-xs px-3 py-1 mb-2 tracking-widest"
-                    style={{ backgroundColor: brandColor }}
+                    style={{ backgroundColor: brandColor, color: textColor }}
                 >
                     {badgeText}
                 </div>
@@ -89,7 +91,7 @@ export default function BrandHero({
                     <Link href={buttons.viewCollection.href}>
                         <button
                             className="text-black px-10 py-4 rounded-none font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all clip-path-slant"
-                            style={{ backgroundColor: brandColor }}
+                            style={{ backgroundColor: brandColor, color: textColor }}
                         >
                             {buttons.viewCollection.text}
                         </button>

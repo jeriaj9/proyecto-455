@@ -30,7 +30,7 @@ export default function NexxPage() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
+        <div className="min-h-screen bg-white text-black font-sans selection:bg-[#e52313] selection:text-white">
             <BrandHeader
                 logoSrc="/images/nexxLogo.svg"
                 logoAlt="Nexx Helmets"
@@ -40,11 +40,12 @@ export default function NexxPage() {
                     { label: t.common.catalog, href: "/nexx/catalog" },
                 ]}
                 theme="light"
-                hoverColor="#C54D3C"
+                hoverColor="#e52313"
             />
             <BrandHero
                 theme="light"
-                brandColor="#C54D3C"
+                textColor="white"
+                brandColor="#e52313"
                 backgroundMedia={{
                     type: 'video',
                     src: '/images/NexxHero.mp4'
@@ -65,7 +66,7 @@ export default function NexxPage() {
             />
             <BrandNewArrivals
                 theme="light"
-                brandColor="#C54D3C"
+                brandColor="#e52313"
                 products={products}
                 texts={{
                     titlePrefix: "New",
@@ -79,10 +80,10 @@ export default function NexxPage() {
                 onVideoClick={(url) => setVideoUrl(url)}
             />
             <section id="about" className="py-24 bg-white relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C54D3C] to-transparent opacity-50" />
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#e52313] to-transparent opacity-50" />
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="relative">
-                        <div className="absolute -inset-4 bg-[#C54D3C] blur-[100px] opacity-20 rounded-full" />
+                        <div className="absolute -inset-4 bg-[#e52313] blur-[100px] opacity-20 rounded-full" />
                         <img
                             src="/images/NexxTechnology.webp"
                             alt="Technology"
@@ -91,7 +92,7 @@ export default function NexxPage() {
                     </div>
                     <div className="space-y-8">
                         <h2 className="text-4xl md:text-5xl font-black uppercase italic leading-tight">
-                            {t.shaft.technology} <br /><span className="text-[#C54D3C]">{t.shaft.advanced}</span>
+                            {t.shaft.technology} <br /><span className="text-[#e52313]">{t.shaft.advanced}</span>
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed">
                             {t.nexx.technologyDesc}
@@ -99,17 +100,17 @@ export default function NexxPage() {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
                             <div className="space-y-3">
-                                <Shield className="w-10 h-10 text-[#C54D3C]" />
+                                <Shield className="w-10 h-10 text-[#e52313]" />
                                 <h3 className="text-xl font-bold uppercase">{t.nexx.aerodynamicsTitle}</h3>
                                 <p className="text-gray-500 text-sm">{t.nexx.aerodynamicsDesc}</p>
                             </div>
                             <div className="space-y-3">
-                                <Wind className="w-10 h-10 text-[#C54D3C]" />
+                                <Wind className="w-10 h-10 text-[#e52313]" />
                                 <h3 className="text-xl font-bold uppercase">{t.nexx.ventilationTitle}</h3>
                                 <p className="text-gray-500 text-sm">{t.nexx.ventilationDesc}</p>
                             </div>
                             <div className="space-y-3">
-                                <Zap className="w-10 h-10 text-[#C54D3C]" />
+                                <Zap className="w-10 h-10 text-[#e52313]" />
                                 <h3 className="text-xl font-bold uppercase">{t.nexx.impactTitle}</h3>
                                 <p className="text-gray-500 text-sm">{t.nexx.impactDesc}</p>
                             </div>

@@ -43,7 +43,7 @@ export default function NexxCatalogPage() {
         : products.filter(p => p.category?.trim() === selectedCategory);
 
     return (
-        <div className="min-h-screen bg-white text-black font-sans selection:bg-[#C54D3C] selection:text-white">
+        <div className="min-h-screen bg-white text-black font-sans selection:bg-[#e52313] selection:text-white">
             <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-200 py-6 px-8">
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     <Link href="/nexx" className="group flex items-center text-gray-500 hover:text-black transition-colors text-sm font-bold uppercase tracking-widest">
@@ -52,10 +52,10 @@ export default function NexxCatalogPage() {
 
                     <div className="flex items-center gap-2">
                         <span className="text-xl font-black italic uppercase tracking-tighter">
-                            Nexx <span className="text-[#C54D3C]">Helmets</span>
+                            Nexx <span className="text-[#e52313]">Helmets</span>
                         </span>
                         <span className="hidden md:inline text-xl font-black italic uppercase tracking-tighter">
-                            <span className="text-[#C54D3C]">/</span> {t.common.catalog}
+                            <span className="text-[#e52313]">/</span> {t.common.catalog}
                         </span>
                     </div>
 
@@ -79,7 +79,7 @@ export default function NexxCatalogPage() {
                         <button
                             onClick={() => setSelectedCategory('all')}
                             className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all border ${selectedCategory === 'all'
-                                ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
+                                ? 'bg-[#e52313] border-[#e52313] text-white'
                                 : 'bg-transparent border-gray-300 text-gray-500 hover:border-black hover:text-black'
                                 }`}
                         >
@@ -90,7 +90,7 @@ export default function NexxCatalogPage() {
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
                                 className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all border ${selectedCategory === cat
-                                    ? 'bg-[#C54D3C] border-[#C54D3C] text-white'
+                                    ? 'bg-[#e52313] border-[#e52313] text-white'
                                     : 'bg-transparent border-gray-300 text-gray-500 hover:border-black hover:text-black'
                                     }`}
                             >
@@ -102,7 +102,7 @@ export default function NexxCatalogPage() {
 
                 {loading ? (
                     <div className="flex justify-center items-center h-64">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#C54D3C]"></div>
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#e52313]"></div>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -111,7 +111,7 @@ export default function NexxCatalogPage() {
                                 <ProductCard
                                     product={product}
                                     theme="light"
-                                    brandColor="#C54D3C"
+                                    brandColor="#e52313"
                                     texts={{
                                         viewDetails: t.common.viewDetails,
                                         inquireNow: t.common.inquireNow,
