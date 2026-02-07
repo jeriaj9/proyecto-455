@@ -67,10 +67,11 @@ export default function NexxCatalogPage() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                     <div>
                         <h1 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-4">
-                            {t.common.theCollection}
+                            {t.common.the} <span style={{ color: '#e52313' }}>{t.common.Collection}</span>
+
                         </h1>
                         <p className="text-gray-600 max-w-xl">
-                            Explore our range of premium European helmets designed for every riding style.
+                            {t.nexx.catalog}
                         </p>
                     </div>
                 </div>
