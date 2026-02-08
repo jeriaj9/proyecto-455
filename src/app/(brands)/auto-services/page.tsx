@@ -28,7 +28,7 @@ export default function AutoServicesPage() {
                 hoverColor="#4E759C"
             />
 
-            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-slate-900">
+            <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-slate-900 pt-28 md:pt-0">
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <img
                     src="/images/455AutoServiceHero.avif"

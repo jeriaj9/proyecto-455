@@ -48,7 +48,7 @@ export default function BrandHero({
         : "from-black to-gray-500";
 
     return (
-        <section className={`relative h-screen flex items-center justify-start overflow-hidden ${containerClass}`}>
+        <section className={`relative min-h-screen flex items-center justify-start overflow-hidden pt-28 md:pt-0 ${containerClass}`}>
             <div
                 className="absolute top-0 right-0 w-3/4 h-full skew-x-12 transform translate-x-1/4"
                 style={{
