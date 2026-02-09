@@ -77,7 +77,7 @@ export default function BrandHero({
                 </div>
                 <h1 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-[0.9]">
                     {title} <br />
-                    <span className={`text-transparent bg-clip-text bg-gradient-to-r ${subtitleGradient}`}>
+                    <span className={`text-transparent bg-clip-text bg-gradient-to-r ${subtitleGradient} pr-4`}>
                         {subtitle}
                     </span>
                 </h1>

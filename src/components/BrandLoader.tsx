@@ -25,7 +25,7 @@ export default function BrandLoader({ brand }: BrandLoaderProps) {
                 };
             case "nexx":
                 return {
-                    logo: "/images/nexxLogo.svg",
+                    logo: "/images/nexxLogo.png",
                     bg: "bg-neutral-950",
                     width: "w-48"
                 };

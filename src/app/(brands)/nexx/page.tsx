@@ -32,10 +32,10 @@ export default function NexxPage() {
     return (
         <div className="min-h-screen bg-white text-black font-sans selection:bg-[#e52313] selection:text-white">
             <BrandHeader
-                logoSrc="/images/nexxLogo.svg"
+                logoSrc="/images/nexxLogo.png"
                 logoAlt="Nexx Helmets"
                 links={[
-                    { label: t.nexx.helmets, href: "#helmets" },
+                    { label: t.nexx.newArrivals, href: "#newArrivals" },
                     { label: t.nexx.safety, href: "#about" },
                     { label: t.common.catalog, href: "/nexx/catalog" },
                 ]}
@@ -84,11 +84,9 @@ export default function NexxPage() {
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="relative">
                         <div className="absolute -inset-4 bg-[#e52313] blur-[100px] opacity-20 rounded-full" />
-                        <img
-                            src="/images/NexxTechnology.webp"
-                            alt="Technology"
-                            className="relative z-10 border-2 border-zinc-800 bg-zinc-900 p-2"
-                        />
+                        <video className="opacity-100 w-full h-full object-cover border-2 border-zinc-800" autoPlay playsInline loop muted poster="">
+                            <source src="/images/NexxSafety.mp4" type="video/mp4" />
+                        </video>
                     </div>
                     <div className="space-y-8">
                         <h2 className="text-4xl md:text-5xl font-black uppercase italic leading-tight">
@@ -119,7 +117,7 @@ export default function NexxPage() {
                 </div>
             </section>
             <BrandFooter
-                logoSrc="/images/nexxLogo.svg"
+                logoSrc="/images/nexxLogo-bg.png"
                 description={t.nexx.footerDesc}
                 instagramUrl="https://www.instagram.com/autoservicios455/"
                 brandName="Nexx Helmets"

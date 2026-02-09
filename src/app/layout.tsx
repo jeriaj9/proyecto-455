@@ -8,8 +8,11 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Project 455 - Shaft, Auto Services, Offroad',
-  description: 'Project 455 Portal',
+  title: 'Proyecto 455 - Shaft, Nexx, 455 Auto Servicios',
+  description: 'Proyecto 455',
+  icons: {
+    icon: '/images/proyecto455Logo.png',
+  },
 };
 
 export default function RootLayout({

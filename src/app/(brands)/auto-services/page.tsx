@@ -11,7 +11,7 @@ export default function AutoServicesPage() {
 
     const getWhatsAppLink = (serviceName: string) => {
         const message = t.autoServices.whatsappMessage.replace("{service_name}", serviceName);
-        return `https://wa.me/18097326422?text=${encodeURIComponent(message)}`;
+        return `https://wa.me/18298851616?text=${encodeURIComponent(message)}`;
     };
 
     return (
@@ -30,11 +30,9 @@ export default function AutoServicesPage() {
 
             <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-slate-900 pt-28 md:pt-0">
                 <div className="absolute inset-0 bg-black/60 z-10" />
-                <img
-                    src="/images/455AutoServiceHero.avif"
-                    alt="Auto Shop Background"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
+                <video className="absolute inset-0 z-0 opacity-60 w-full h-full object-cover" autoPlay playsInline loop muted poster="">
+                    <source src="/images/455AutoServiceHero.mp4" type="video/mp4" />
+                </video>
 
                 <div className="relative z-20 text-center space-y-6 px-4 max-w-4xl mx-auto">
                     <div className="inline-block bg-[#4E759C] text-white font-bold uppercase text-xs px-4 py-1 rounded-full mb-4 tracking-widest">
@@ -105,6 +103,7 @@ export default function AutoServicesPage() {
                             description={t.autoServices.oilDesc}
                             linkHref={getWhatsAppLink(t.autoServices.oilChange)}
                             linkText={t.common.requestInfo}
+                            backgroundImage="/images/oil-change.jpg"
                         />
                         <ServiceCard
                             icon={Thermometer}
@@ -112,6 +111,7 @@ export default function AutoServicesPage() {
                             description={t.autoServices.acDesc}
                             linkHref={getWhatsAppLink(t.autoServices.acRepair)}
                             linkText={t.common.requestInfo}
+                            backgroundImage="/images/ac-repair.jpg"
                         />
                         <ServiceCard
                             icon={Disc}
@@ -119,6 +119,7 @@ export default function AutoServicesPage() {
                             description={t.autoServices.brakeDesc}
                             linkHref={getWhatsAppLink(t.autoServices.brakeBands)}
                             linkText={t.common.requestInfo}
+                            backgroundImage="/images/brake-service.jpg"
                         />
                         <ServiceCard
                             icon={Wrench}
@@ -126,6 +127,7 @@ export default function AutoServicesPage() {
                             description={t.autoServices.accessoriesDesc}
                             linkHref={getWhatsAppLink(t.autoServices.accessories)}
                             linkText={t.common.requestInfo}
+                            backgroundImage="/images/accessories.jpg"
                         />
                         <ServiceCard
                             icon={Laptop}
@@ -133,13 +135,7 @@ export default function AutoServicesPage() {
                             description={t.autoServices.diagnosticsDesc}
                             linkHref={getWhatsAppLink(t.autoServices.diagnostics)}
                             linkText={t.common.requestInfo}
-                        />
-                        <ServiceCard
-                            icon={Filter}
-                            title={t.autoServices.preventive}
-                            description={t.autoServices.preventiveDesc}
-                            linkHref={getWhatsAppLink(t.autoServices.preventive)}
-                            linkText={t.common.requestInfo}
+                            backgroundImage="/images/diagnostics.jpg"
                         />
                         <ServiceCard
                             icon={Filter}
@@ -147,6 +143,7 @@ export default function AutoServicesPage() {
                             description={t.autoServices.crystalTintDesc}
                             linkHref={getWhatsAppLink(t.autoServices.crystalTint)}
                             linkText={t.common.requestInfo}
+                            backgroundImage="/images/tinting.jpg"
                         />
                     </div>
                 </div>

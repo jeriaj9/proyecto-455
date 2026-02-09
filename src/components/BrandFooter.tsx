@@ -54,14 +54,14 @@ export default function BrandFooter({
                         </li>
                         <li className="flex items-center gap-3">
                             <Clock className="text-[#4E759C] shrink-0" size={18} />
-                            <span>Mon - Fri: 8:00 AM - 6:00 PM<br />Sat: 9:00 AM - 2:00 PM</span>
+                            <span>{t.common.weekDays}: 8:00 AM - 6:00 PM<br />{t.common.weekEnd}: 9:00 AM - 2:00 PM</span>
                         </li>
                     </ul>
                 </div>
 
                 <div className="lg:col-span-2 h-64 rounded-xl overflow-hidden bg-slate-800 relative">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236.53565663170068!2d-69.95589765063913!3d18.457799884563475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea561f889cf10a9%3A0xc96ba24ef9561a70!2sLovato%20Auto%20Gas!5e0!3m2!1sen!2sdo!4v1769807510715!5m2!1sen!2sdo"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d946.1428143983284!2d-69.95660853040845!3d18.45776579891398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea56100230b2db1%3A0x682a5eb79e6c430b!2sAutoservicio%20455!5e0!3m2!1sen!2sdo!4v1770658656751!5m2!1sen!2sdo"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}

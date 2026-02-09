@@ -7,7 +7,11 @@ export default function Home() {
       <div className="max-w-4xl w-full space-y-12">
         <header className="text-center space-y-4">
           <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-blue-400 via-blue-200 to-blue-400 bg-clip-text text-transparent">
-            Proyecto 455
+            <img
+              src="/images/proyecto455Logo.png"
+              alt="Proyecto 455"
+              className="h-32 mx-auto object-contain"
+            />
           </h1>
           <p className="text-gray-400 text-lg">
             Selecciona una marca para explorar nuestros productos y servicios.
@@ -22,7 +26,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-[#e6ef5a]/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
             <div className="relative flex flex-col h-full space-y-4">
               <div className="h-12 w-fit justify-start rounded-full flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                <img src={"/images/ShaftLogo.png"} />
+                <img src={"/images/ShaftLogo.png"} className="h-24 mx-auto object-contain" />
               </div>
               <h2 className="text-2xl font-bold text-white group-hover:text-[#e6ef5a] transition-colors">
                 Shaft Dominicana
@@ -43,7 +47,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-[#4E759C]/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
             <div className="relative flex flex-col h-full space-y-4">
               <div className="h-12 w-fit justify-start rounded-full flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                <img src={"/images/455AutoServiceLogo.png"} />
+                <img src={"/images/455AutoServiceLogo.png"} className="h-24 mx-auto object-contain" />
               </div>
               <h2 className="text-2xl font-bold text-white group-hover:text-[#4E759C] transition-colors">
                 Auto Servicios 455
@@ -64,7 +68,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-[#e52313]/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
             <div className="relative flex flex-col h-full space-y-4">
               <div className="h-12 w-fit justify-start rounded-full flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                <img src={"/images/nexxLogo.svg"} />
+                <img src={"/images/nexxLogo.png"} className="h-24 mx-auto object-contain" />
               </div>
               <h2 className="text-2xl font-bold text-white group-hover:text-[#e52313] transition-colors">
                 Nexx Helmets

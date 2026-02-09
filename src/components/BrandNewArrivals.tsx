@@ -32,7 +32,7 @@ export default function BrandNewArrivals({
     const borderClass = isDark ? "border-gray-800" : "border-gray-200";
 
     return (
-        <section className={`py-24 ${bgClass} ${isDark ? 'text-white' : 'text-black'}`}>
+        <section id="newArrivals" className={`py-24 ${bgClass} ${isDark ? 'text-white' : 'text-black'}`}>
             <div className="container mx-auto px-6">
                 <div className={`flex justify-between items-end mb-12 border-b pb-6 ${borderClass}`}>
                     <h2 className="text-4xl md:text-5xl font-black uppercase italic tracking-tighter">

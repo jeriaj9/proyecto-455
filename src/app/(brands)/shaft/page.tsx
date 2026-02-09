@@ -35,8 +35,8 @@ export default function ShaftPage() {
                 logoSrc="/images/ShaftLogo.png"
                 logoAlt="Shaft Dominicana"
                 links={[
-                    { label: t.shaft.helmets, href: "#helmets" },
-                    { label: t.shaft.technology, href: "#about" },
+                    { label: t.shaft.newArrivals, href: "#newArrivals" },
+                    { label: t.shaft.safety, href: "#about" },
                     { label: t.common.catalog, href: "/shaft/catalog" },
                     { label: t.common.textileCatalog, href: "/shaft/textile-catalog" },
                 ]}
