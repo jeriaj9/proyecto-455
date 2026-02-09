@@ -62,8 +62,8 @@ export default function ProjectDropdown({ theme = "light" }: ProjectDropdownProp
                                 className={`flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors ${dropdownText}`}
                                 onClick={() => setIsOpen(false)}
                             >
-                                <div className="w-8 h-8 rounded bg-black flex items-center justify-center text-white font-black italic text-[10px] uppercase">
-                                    Shaft
+                                <div className="w-8 h-8 rounded bg-[#1e293b] flex items-center justify-center text-white font-black italic text-[10px] uppercase">
+                                    <img src={"/images/ShaftLogo.png"} className="h-24 mx-auto object-contain" />
                                 </div>
                                 <span className="font-bold">Shaft Dominicana</span>
                             </Link>
@@ -73,8 +73,8 @@ export default function ProjectDropdown({ theme = "light" }: ProjectDropdownProp
                                 className={`flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors ${dropdownText}`}
                                 onClick={() => setIsOpen(false)}
                             >
-                                <div className="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-black font-black italic text-[10px] uppercase">
-                                    Nexx
+                                <div className="w-8 h-8 rounded border border-gray-200 flex items-center justify-center text-black font-black italic text-[10px] uppercase">
+                                    <img src={"/images/nexxLogo.png"} className="h-24 mx-auto object-contain" />
                                 </div>
                                 <span className="font-bold">Nexx Helmets</span>
                             </Link>
@@ -84,10 +84,10 @@ export default function ProjectDropdown({ theme = "light" }: ProjectDropdownProp
                                 className={`flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors ${dropdownText}`}
                                 onClick={() => setIsOpen(false)}
                             >
-                                <div className="w-8 h-8 rounded bg-[#4E759C] flex items-center justify-center text-white font-black italic text-[10px] uppercase">
-                                    455
+                                <div className="w-8 h-8 rounded border border-gray-200 flex items-center justify-center text-white font-black italic text-[10px] uppercase">
+                                    <img src={"/images/455AutoServiceLogo.png"} className="h-24 mx-auto object-contain" />
                                 </div>
-                                <span className="font-bold">Auto Services</span>
+                                <span className="font-bold">Auto Servicios</span>
                             </Link>
                         </div>
                     </div>
