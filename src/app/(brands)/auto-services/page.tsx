@@ -29,8 +29,8 @@ export default function AutoServicesPage() {
             />
 
             <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-slate-900 pt-28 md:pt-0">
-                <div className="absolute inset-0 bg-black/60 z-10" />
-                <video className="absolute inset-0 z-0 opacity-60 w-full h-full object-cover" autoPlay playsInline loop muted poster="">
+                <div className="absolute inset-0 bg-black/40 z-10" />
+                <video className="absolute inset-0 z-0 opacity-40 w-full h-full object-cover" autoPlay playsInline loop muted poster="">
                     <source src="/images/455AutoServiceHero.mp4" type="video/mp4" />
                 </video>
 
