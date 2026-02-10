@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import BrandFooter from "@/components/BrandFooter";
 import ServiceCard from "@/components/ServiceCard";
 import BrandHeader from "@/components/BrandHeader";
+import AboutStats from "@/components/AboutStats";
 
 export default function AutoServicesPage() {
     const { t } = useLanguage();
@@ -72,16 +73,10 @@ export default function AutoServicesPage() {
                         <p className="text-slate-600 text-lg leading-relaxed">
                             {t.autoServices.aboutDesc2}
                         </p>
-                        <div className="flex gap-8 pt-4">
-                            <div>
-                                <h3 className="text-3xl font-black text-[#4E759C]">3+</h3>
-                                <p className="text-sm font-bold uppercase text-slate-400">{t.autoServices.yearsExp}</p>
-                            </div>
-                            <div>
-                                <h3 className="text-3xl font-black text-[#4E759C]">2.5k+</h3>
-                                <p className="text-sm font-bold uppercase text-slate-400">{t.autoServices.happyClients}</p>
-                            </div>
-                        </div>
+                        <AboutStats
+                            yearsLabel={t.autoServices.yearsExp}
+                            customersLabel={t.autoServices.happyClients}
+                        />
                     </div>
                 </div>
             </section>
