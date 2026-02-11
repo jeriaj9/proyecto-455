@@ -6,6 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import ProductVideoModal from "@/components/ProductVideoModal";
 import ProductCard from "@/components/ProductCard";
+import ProjectDropdown from "@/components/ProjectDropdown";
 
 export default function NexxCatalogPage() {
     const { t } = useLanguage();
@@ -58,8 +59,7 @@ export default function NexxCatalogPage() {
                             <span className="text-[#e52313]">/</span> {t.common.catalog}
                         </span>
                     </div>
-
-                    <div className="w-20" />
+                    <ProjectDropdown theme="light" />
                 </div>
             </header>
 
