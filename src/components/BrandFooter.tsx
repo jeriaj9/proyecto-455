@@ -74,7 +74,7 @@ export default function BrandFooter({
             </div>
 
             <div className="container mx-auto px-6 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-                <p>&copy; 2026 {brandName}. All rights reserved.</p>
+                <p>&copy; 2026 {brandName}. All rights reserved. Develop by <a href="https://webuddy.dev" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-[#6A00F4] via-[#A855F7] via-[#EC4899] via-[#F97316] to-[#FBBF24] bg-clip-text text-transparent text-2xl font-extrabold">Webuddy</a></p>
             </div>
         </footer>
     );
