@@ -1,26 +1,250 @@
 [
   {
-    "id": "shaft-helmet-001",
-    "name": "SHAFT Pro Carbon Black",
-    "description": "Lightweight carbon fiber helmet with advanced ventilation and modern design.",
-    "category": "Urban",
-    "image_url": "<https://example.com/images/shaft-pro-carbon-black.jpg>",
-    "video_url": "https://www.youtube.com/watch?v=JBa9rNxRehE"
-  },
-  {
     "id": "shaft-helmet-002",
-    "name": "SH 236 ROMA",
-    "description": "El espíritu libre continúa latente en este nuevo SH-236 ROMA que se mueve inmerso en un mundo de pasión por las dos ruedas. Un casco abierto con un diseño retro, tapizado removible con detalles reflectivos y un diseño único, una coraza totalmente exclusiva con dos salidas de aire traseras. Adéntrate a la libertad con el SH-236 ROMA Solid.",
-    "category": "Urban",
-    "image_url": "https://shafthelmets.com/wp-content/uploads/SH-236-ROMA.SOLID_.BL_.SL_.LAT_.DER_.png",
-    "video_url": "https://www.youtube.com/watch?v=i7IY_c1zjNY"
+    "name": "SH-502 SP BIOHAZARD ROJO",
+    "description": "Casco integral con certificación DOT, coraza en ABS y visor preparado para Pinlock 30. Interior desmontable y lavable, y preparado para intercomunicador.",
+    "category": "Sport",
+    "image_url": "https://drive.google.com/file/d/1FO9b_inGDfyuPj4c0W4HxGzulH2yPoUn/view?usp=drivesdk",
+    "video_url": ""
   },
   {
     "id": "shaft-helmet-003",
-    "name": "SH PRO 343 DV",
-    "description": "El espiritu deportivo, cuidado extremo",
+    "name": "SH-502 SP BIOHAZARD BLUE",
+    "description": "Casco integral con certificación DOT, coraza en ABS y visor preparado para Pinlock 30. Interior desmontable y lavable, y preparado para intercomunicador.",
     "category": "Sport",
-    "image_url": "https://shafthelmets.com/wp-content/uploads/SHPRO-343-DV.SOLID_.NG_.M.SL_.LAT-DER.png",
-    "video_url": "https://www.youtube.com/watch?v=3wLbXzGLMtc"
+    "image_url": "SHAFT-502-SP_BIOHAZARD_NG.M.AR_SM.CL.IR.AZ.LAT.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-004",
+    "name": "SHAFT SH-226 GT SOLID",
+    "description": "Casco abierto de diseño deportivo con certificación ECE R22.06 / RES 1080. Coraza en ABS e interior en EPS. Visor en policarbonato con protección UV, anti-scratch y fácil liberación, y preparado para intercomunicador.",
+    "category": "Urban",
+    "image_url": "SH-226GT.SOLID.NG.M.N7.TR.IR.AZ.LAT.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-005",
+    "name": "SH-3820 SP SOLID AMARILLO",
+    "description": "Casco abatible con doble visor y certificación ECE R22.06. Visor en policarbonato con protección UV y anti-scratch, y ventilación superior, frontal y trasera. Preparado para Pinlock 30 e intercomunicador. Para ciudad y carretera.",
+    "category": "Touring",
+    "image_url": "https://drive.google.com/file/d/1dElPLCetfcqYRPKi9b1p83Cs-6xNlxsL/view?usp=drivesdk                        ",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-006",
+    "name": "SH-3820 SP SOLID ROJO",
+    "description": "Casco abatible con doble visor y certificación ECE R22.06. Visor en policarbonato con protección UV y anti-scratch, y ventilación superior, frontal y trasera. Preparado para Pinlock 30 e intercomunicador. Para ciudad y carretera.",
+    "category": "Touring",
+    "image_url": "https://drive.google.com/file/d/1HErpb_8h48J2p-W7g-inAk9VbLNz3tzr/view?usp=drivesdk",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-007",
+    "name": "SH-502 SP FALL AMARILLO",
+    "description": "Casco integral con certificación DOT, coraza en ABS y visor preparado para Pinlock 30. Interior desmontable y lavable, y preparado para intercomunicador.",
+    "category": "Sport",
+    "image_url": "SH_502SP_NG_AM.N_SM.CL.IR.AZ_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-008",
+    "name": "SH-502 SP FIED MORADO",
+    "description": "Casco integral con certificación DOT, coraza en ABS y visor preparado para Pinlock 30. Interior desmontable y lavable, y preparado para intercomunicador.",
+    "category": "Sport",
+    "image_url": "https://drive.google.com/file/d/1GFVrZlcPZWypJxSMF0VcW0JpG4lcGjWx/view?usp=drivesdk",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-009",
+    "name": "SH-502 SP THUNDER",
+    "description": "Casco integral con certificación DOT, coraza en ABS y visor preparado para Pinlock 30. Interior desmontable y lavable, y preparado para intercomunicador.",
+    "category": "Sport",
+    "image_url": "SH-502-SP_THUNDER_NG_GR.OS_SM.IR.DR_LAT-IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-010",
+    "name": "SH-549 SP DOOM BOTS",
+    "description": "Casco integral para el día a día y la carretera. Coraza en ABS, ventilación frontal y superior, interior removible y lavable, cierre micrométrico, y preparado para Pinlock 30 e intercomunicador.",
+    "category": "Sport",
+    "image_url": "SH_549SP_DOOM.BOTS_AZ_AZ_SM.CL.IR.AZ_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-011",
+    "name": "SH-502 SP ZTEPH MORADO",
+    "description": "Casco integral con certificación DOT, coraza en ABS y visor preparado para Pinlock 30. Interior desmontable y lavable, y preparado para intercomunicador.",
+    "category": "Sport",
+    "image_url": "SH-502-SP_ZTEPH_MR_NJ.N_SM.CL.IR.AZ_LAT-IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-012",
+    "name": "SH-502 SP ZTEPH NEGRO",
+    "description": "Casco integral con certificación DOT, coraza en ABS y visor preparado para Pinlock 30. Interior desmontable y lavable, y preparado para intercomunicador.",
+    "category": "Sport",
+    "image_url": "SH-502-SP_ZTEPH_NM_AM.N_SM.REVO.RJ_LAT-IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-013",
+    "name": "SH-504 DV SOLID NEGRO",
+    "description": "Casco integral con doble visor y certificación ECE R22.06. Coraza en ABS, interior removible y lavable, cierre micrométrico,\ny preparado para Pinlock 30 e intercomunicador.",
+    "category": "Sport",
+    "image_url": "SH-504-DV_NM_SOLID_GR.OS_IR.AZ_LAT-IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-014",
+    "name": "SH-562 R GRAND PRIX PLATEADO",
+    "description": "Casco integral de estilo deportivo con certificación DOT y RES 1080. Spoiler deportivo, bloqueo de visor y visor en policarbonato con protección UV y anti-scratch, preparado para Pinlock 30. Interior removible y lavable con detalles reflectivos.",
+    "category": "Sport",
+    "image_url": "SH_562R_GRAND_PRIX_AZ_SL_SM.CL.IR.AZ_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-015",
+    "name": "SH-562 R GRAND PRIX NARANJA",
+    "description": "Casco integral de estilo deportivo con certificación DOT y RES 1080. Spoiler deportivo, bloqueo de visor y visor en policarbonato con protección UV y anti-scratch, preparado para Pinlock 30. Interior removible y lavable con detalles reflectivos.",
+    "category": "Sport",
+    "image_url": "SH_562R_GRAND_PRIX_AZ.OS_NJ_SM.IR.RJ_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-016",
+    "name": "SH-562 R GRAND PRIX ROSADO",
+    "description": "Casco integral de estilo deportivo con certificación DOT y RES 1080. Spoiler deportivo, bloqueo de visor y visor en policarbonato con protección UV y anti-scratch, preparado para Pinlock 30. Interior removible y lavable con detalles reflectivos.",
+    "category": "Sport",
+    "image_url": "SH_562R_GRAND_PRIX_BL.PL_FC_SM.IR.MR_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-017",
+    "name": "SH-562 R GRAND PRIX VERDE",
+    "description": "Casco integral de estilo deportivo con certificación DOT y RES 1080. Spoiler deportivo, bloqueo de visor y visor en policarbonato con protección UV y anti-scratch, preparado para Pinlock 30. Interior removible y lavable con detalles reflectivos.",
+    "category": "Sport",
+    "image_url": "SH_562R_GRAND_PRIX_GR.CL_VR_SM.IR.SL_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-018",
+    "name": "SH-562 R GRAND PRIX AMARILLO",
+    "description": "Casco integral de estilo deportivo con certificación DOT y RES 1080. Spoiler deportivo, bloqueo de visor y visor en policarbonato con protección UV y anti-scratch, preparado para Pinlock 30. Interior removible y lavable con detalles reflectivos.",
+    "category": "Sport",
+    "image_url": "SH_562R_GRAND_PRIX_RJ_AM_SM.IR.RJ_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-019",
+    "name": "SH-562 R MANIC-X",
+    "description": "Casco integral de estilo deportivo con certificación DOT y RES 1080. Spoiler deportivo, bloqueo de visor y visor en policarbonato con protección UV y anti-scratch, preparado para Pinlock 30. Interior removible y lavable con detalles reflectivos.",
+    "category": "Sport",
+    "image_url": "SH_562R_MANIC-X_RJ_NR_SM.CL.IR.AZ_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-020",
+    "name": "SH-562 R SOLID AZUL",
+    "description": "Casco integral de estilo deportivo con certificación DOT y RES 1080. Spoiler deportivo, bloqueo de visor y visor en policarbonato con protección UV y anti-scratch, preparado para Pinlock 30. Interior removible y lavable con detalles reflectivos.",
+    "category": "Sport",
+    "image_url": "SH-562-R-SOLID-AZ-MATE-GR-V.SM.CL.IR.AZ.LAT.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-021",
+    "name": "SH-562 R SOLID NEGRO",
+    "description": "Casco integral de estilo deportivo con certificación DOT y RES 1080. Spoiler deportivo, bloqueo de visor y visor en policarbonato con protección UV y anti-scratch, preparado par Pinlock 30. Interior removible y lavable con detalles reflectivos.",
+    "category": "Sport",
+    "image_url": "SH-562R.SOLD.NG.M.GR.LAT.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-022",
+    "name": "SH-584 SP ASIA",
+    "description": "Casco integral con certificación ECE R22.06 / RES 1080. Spoiler deportivo de dos piezas y ventilación superior, frontal y trasera. Visor en policarbonato con protección UV y anti-scratch, interior removible y lavable, y preparado para Pinlock 30 e\nintercomunicador.",
+    "category": "Sport",
+    "image_url": "SH_584SP_ASIA_GR.MTT_BL_SM.RV.RJ_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-023",
+    "name": "SHPRO-610 DV EVO COLOR POWER AZUL CLARO",
+    "description": "Casco integral de la línea SHAFT PRO con doble visor y visor solar interno. Certificación ECE R22.06, ventilación superior e inferior con salida posterior, interior desmontable y lavable, cierre micrométrico y Pinlock 30 incluido.",
+    "category": "Sport",
+    "image_url": "SHPRO-610.DV.EVO_COLOR-POWER.AZ.CL.AZ_SM.CL.IR.AZ.LAT.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-024",
+    "name": "SHPRO-610 DV EVO COLOR POWER MORADO",
+    "description": "Casco integral de la línea SHAFT PRO con doble visor y visor solar interno. Certificación ECE R22.06, ventilación superior inferior con salida posterior, interior desmontable y lavable, cierre micrométrico y Pinlock 30 incluido.",
+    "category": "Sport",
+    "image_url": "SHPRO-610.DV.EVO_COLOR-POWER.MR.FC_SM.CL.REVO.MR.LAT.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-025",
+    "name": "SH-MX360 CONWAY",
+    "description": "Casco multipropósito con certificación DOT y coraza en ABS. Ventilación con entradas y extractores de aire, interior desmontable y lavable, y preparado para Pinlock 30 e intercomunicador. Para ciudad, carretera y rutas exigentes.",
+    "category": "Adventure",
+    "image_url": "SH-MX360_CONWAY_GR.OS_RJ_SM.REVO.RJ_LAT-IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-026",
+    "name": "SH-MX60 SOLID",
+    "description": "Casco cross para todoterreno con certificación ECE R22.06 y coraza en ABS de alta resistencia. Ventilación frontal, superior y trasera, forro desmontable y lavable con telas transpirables, y preparado para intercomunicador.",
+    "category": "Off-Road",
+    "image_url": "SH-MX60_SOLID_NB_HG.SL_3.4.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-027",
+    "name": "SHPRO-MX480 C AZUL CARBON",
+    "description": "Casco multipropósito SHAFT PRO en fibra de carbono, con EPS de alta densidad y tecnología SAT. Doble visor anti-scratch con protección UV y Pinlock 30 incluido. Homologación ECE R22.06/ RES 1080. Peso aproximado: 1.500 g ± 50.",
+    "category": "Adventure",
+    "image_url": "SHPRO_MX480C_SOLID_AZ.C_SL_SM.CL.IR.AZ_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-028",
+    "name": "SHPRO-MX480 C NEGRO CARBON",
+    "description": "Casco multipropósito SHAFT PRO en fibra de carbono, con EPS de alta densidad y tecnología SAT. Doble visor anti-scratch con protección UV y Pinlock 30 incluido. Homologación ECE R22.06/ RES 1080. Peso aproximado: 1.500 g ± 50.",
+    "category": "Adventure",
+    "image_url": "SHPRO_MX480C_SOLID_NG.C_SL_SM.RV.RJ_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-029",
+    "name": "SHPRO-MX480 C ROJO CARBON",
+    "description": "Casco multipropósito SHAFT PRO en fibra de carbono, con EPS de alta densidad y tecnología SAT. Doble visor anti-scratch con protección UV y Pinlock 30 incluido. Homologación ECE R22.06/ RES 1080. Peso aproximado: 1.500 g ± 50.",
+    "category": "Adventure",
+    "image_url": "SHPRO_MX480C_SOLID_RJ.C_SL_SM.CL.IR.AZ_LAT_IZQ.png",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-030",
+    "name": "SH-502 SP BIRD NEST CAMALEON",
+    "description": "Casco integral con certificación DOT, coraza en ABS y visor preparado para Pinlock 30. Interior desmontable y lavable, y preparado para intercomunicador.",
+    "category": "Sport",
+    "image_url": "",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-031",
+    "name": "SH-502 SP BIRD NEST MORADO",
+    "description": "Casco integral con certificación DOT, coraza en ABS y visor preparado para Pinlock 30. Interior desmontable y lavable, y preparado para intercomunicador.",
+    "category": "Sport",
+    "image_url": "",
+    "video_url": ""
+  },
+  {
+    "id": "shaft-helmets-032",
+    "name": "SH-504 DV LUE",
+    "description": "Casco integral con doble visor y certificación ECE R22.06. Coraza en ABS, interior removible y lavable, cierre micrométrico, y preparado para Pinlock 30 e intercomunicador.",
+    "category": "Sport",
+    "image_url": "",
+    "video_url": ""
   }
 ]
